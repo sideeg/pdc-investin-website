@@ -16,7 +16,8 @@ class session extends Model
     
     protected $fillable = [
 
-        'session_name', 'start_date', 'end_date',"total_num_of_shares","num_of_taken_share","sector_id"
+        'session_name_ar','session_name_en', 'start_date',
+         'end_date',"total_num_of_shares","num_of_taken_share","sector_id"
     ];
 
     public function sector()

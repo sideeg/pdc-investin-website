@@ -15,7 +15,8 @@ class sector extends Model
     
     protected $fillable = [
 
-        'sector_name', 'icon', 'text',"image1","image2","image3","Brief"
+        'sector_name_en',"sector_name_ar", 'icon',
+         'text_en',"text_ar","image1","image2","image3","Brief_en","Brief_ar"
     ];
 
     public function getIconFullPathAttribute()
