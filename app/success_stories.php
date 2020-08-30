@@ -15,7 +15,7 @@ class success_stories extends Model
     
     protected $fillable = [
 
-         'icon','name_en','name_ar','text_en','text_ar','created_at'
+         'icon','name_en','name_ar','text_en','text_ar','created_at','facbook_url'
     ];
 
 
