@@ -13,7 +13,7 @@ class about_us extends Model
     
     protected $fillable = [
 
-        'date', 'action', 'text'
+        'date', 'action', 'text_en','text_ar'
     ];
 
 

@@ -15,16 +15,16 @@ class intro extends Model
     protected $guarded = [];
 
 
-    protected $appends = ['photo_full_path'];
+    protected $appends = ['icon_full_path'];
     
     protected $fillable = [
 
-        'section_name', 'icon', 'text'
+        'section_name_en','section_name_ar', 'icon', 'text_en','text_ar'
     ];
 
 
-	public function getPhotoFullPathAttribute()
+	public function getIconFullPathAttribute()
 	{
-		return isset($this->attributes['photo']) ?  '/images/' . $this->attributes['photo'] : null;
+		return isset($this->attributes['icon']) ?  '/images/' . $this->attributes['icon'] : null;
     }
 }
