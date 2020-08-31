@@ -20,7 +20,7 @@ class homecontroller extends Controller
      * @param  int  $id
      * @return View
      */
-    public function show()
+    public function index()
     {
         dd(json_encode( success_stories::select('icon','name', 'text',"created_at")->get()));
         $success_stories = json_encode(success_stories::select('icon','name', 'text',"created_at")->get());
@@ -30,7 +30,7 @@ class homecontroller extends Controller
         $about_us = json_encode(about_us::all());
         $intro = intro::all();
         
-        return view('welcome')->with('intro',$intro )->with('about_us',$about_us )
+        return view('index')->with('intro',$intro )->with('about_us',$about_us )
         ->with('sector',$sector )->with('our_network',$our_network )->with('blog',$blog )
         ->with('blog',$blog )->with('success_stories',$success_stories );
     }

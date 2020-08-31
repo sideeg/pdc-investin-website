@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
  //   return view('introController');
 //});
 
-Route::get("/","homecontroller@show");
+Route::get("/","homeController@index");
 Route::get("/blogs","blogController@index");
 Route::get("/blogs/{id}","blogController@blogById");
 Route::get("/sectors/{id}","sectorController@show");
