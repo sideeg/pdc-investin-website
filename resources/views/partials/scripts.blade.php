@@ -1,30 +1,30 @@
 
         <!-- js placed at the end of the document so the pages load faster -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/scrollspy.min.js"></script>
+        <script src="{{ asset('js/jquery.min.js') }}"></script>
+        <script src="{{ asset('js/popper.min.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('js/scrollspy.min.js') }}"></script>
         <!-- easing -->
-        <script src="js/jquery.easing.min.js"></script>
+        <script src="{{ asset('js/jquery.easing.min.js') }}"></script>
         <!-- Read More -->
-        <script src="js/jquery.show-more.js"></script>
+        <script src="{{ asset('js/jquery.show-more.js') }}"></script>
         <!-- Portfolio -->
-        <script src="js/jquery.magnific-popup.min.js"></script>
-        <script src="js/isotope.js"></script>
-        <script src="js/portfolio-filter.js"></script> 
+        <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
+        <script src="{{ asset('js/isotope.js') }}"></script>
+        <script src="{{ asset('js/portfolio-filter.js') }}"></script> 
         <!-- Carousel -->
-        <script src="js/owl.carousel.min.js"></script>
-        <script src="js/owlcarousel.init.js"></script>
-        <script src="js/slick.min.js"></script> 
-        <script src="js/slick.init.js"></script> 
+        <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+        <script src="{{ asset('js/owlcarousel.init.js') }}"></script>
+        <script src="{{ asset('js/slick.min.js') }}"></script> 
+        <script src="{{ asset('js/slick.init.js') }}"></script> 
         <!-- VIDEO ICON -->
-        <script src="js/magnific.init.js"></script>
+        <script src="{{ asset('js/magnific.init.js') }}"></script>
         <!-- COUNTER -->
-        <script src="js/counter.init.js"></script>
+        <script src="{{ asset('js/counter.init.js') }}"></script>
         <!-- CONTACT -->
-        <script src="js/contact.js"></script>
+        <script src="{{ asset('js/contact.js') }}"></script>
         <!--custom script-->
-        <script src="js/app.js"></script>
+        <script src="{{ asset('js/app.js') }}"></script>
         
         <script>
             

@@ -11,7 +11,7 @@ class success_stories extends Model
 
 
     
-    protected $appends = ['photo_full_path'];
+    protected $appends = ['icon_full_path'];
     
     protected $fillable = [
 
@@ -19,8 +19,8 @@ class success_stories extends Model
     ];
 
 
-	public function getPhotoFullPathAttribute()
+	public function getIconFullPathAttribute()
 	{
-		return isset($this->attributes['photo']) ?  '/images/' . $this->attributes['photo'] : null;
+		return isset($this->attributes['icon']) ?  '/images/' . $this->attributes['icon'] : null;
     }
 }

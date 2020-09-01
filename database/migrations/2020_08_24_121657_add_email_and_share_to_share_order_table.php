@@ -13,7 +13,7 @@ class AddEmailAndShareToShareOrderTable extends Migration
      */
     public function up()
     {
-        Schema::table('share_order', function (Blueprint $table) {
+        Schema::table('shares_order', function (Blueprint $table) {
             $table->string('email');
             $table->string('num_of_shares');
         });

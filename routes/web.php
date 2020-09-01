@@ -17,6 +17,12 @@ use Illuminate\Support\Facades\Route;
  //   return view('introController');
 //});
 
+Route::get('locale/{locale}', function ($locale){
+    Session::put('locale', $locale);
+    return redirect()->back();
+});
+
+
 Route::get("/","homeController@index");
 Route::get("/blogs","blogController@index");
 Route::get("/blogs/{id}","blogController@blogById");

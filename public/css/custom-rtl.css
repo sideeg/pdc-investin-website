@@ -1,0 +1,96 @@
+.row {
+    flex-direction: row-reverse;
+}
+
+/* webkit solution */
+::-webkit-input-placeholder { text-align:right; }
+/* mozilla solution */
+input:-moz-placeholder { text-align:right; }
+
+
+
+/*****************
+  . NAVBAR
+*****************/
+#mySidenav {
+    padding: auto 0 !important;
+    
+}
+
+@media (min-width: 768px) {
+    .navbar-expand-md {
+        justify-content: flex-end;
+    }
+}
+
+.navbar-brand {
+    margin-left: 1rem;
+    margin-right: 0;
+}
+
+
+.navbar > .row {
+    margin: auto 0;
+}
+
+
+
+/*****************
+  . ABOUT US
+*****************/
+
+.time-line {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    border-right: 5px solid #009F61;
+    border-left: none;
+
+}
+
+.time-line::before {
+    content: '\A';
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 100%;
+    transform: translateY(-6px);
+    box-sizing: content-box;
+    margin-left: -10px;
+    border-radius: 50%;
+    background: #009F61;
+    border: 5px solid #fff;
+    
+}
+.time-line-row {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 8px;
+}
+
+
+/*****************
+  . CONTACT US
+*****************/
+
+.custom-form .input-data label{
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    color: rgb(218, 218, 218);
+    pointer-events: none;
+    transition: all 0.2s ease;
+
+}
+
+.form-control {
+    background: #00B489;
+}
+
+.form-control:focus {
+    /* background: #00B489; */
+    border-color: #aeffec !important;
+    box-shadow: inset 0 0 2px #aeffec, 0 0 2px #aeffec !important;
+}

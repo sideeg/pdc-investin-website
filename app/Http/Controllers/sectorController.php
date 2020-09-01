@@ -11,7 +11,7 @@ class sectorController extends Controller
      * 
      * 
      */
-    public function show($id)
+    public function index($id)
     {
         $sector = json_encode(sector::where('id',$id)->select('id','sector_name', 'Brief',"text","image1","image2","image3"
         ,"icon")->get());
