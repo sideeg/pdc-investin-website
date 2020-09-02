@@ -1,1 +1,1 @@
-you have to use "composer require doctrine/dbal" bbefore migrate
+you have to use "composer require doctrine/dbal" before migrate
