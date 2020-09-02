@@ -17,7 +17,7 @@ class CreateAboutUsTable extends Migration
             $table->id();
             $table->string('date');
             $table->string('action');
-            $table->string('text');
+            $table->text('text');
             $table->timestamps();
         });
     }

@@ -16,7 +16,7 @@ class AddArabicToSuccessStoriesTable extends Migration
         Schema::table('success_stories', function (Blueprint $table) {
             $table->renameColumn('text',"text_en");
             $table->renameColumn('name',"name_en");
-            $table->string('text_ar');
+            $table->text('text_ar');
             $table->string('name_ar');
         });
     }

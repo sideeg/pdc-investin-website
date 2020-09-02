@@ -14,10 +14,10 @@ class AddArabicToAboutUsTable extends Migration
     public function up()
     {
         Schema::table('about_us', function (Blueprint $table) {
-            $table->string('text_ar');
+            $table->text('text_ar');
             $table->renameColumn('text',"text_en");
             $table->renameColumn('action',"action_en");
-            $table->string('action_ar');
+            $table->text('action_ar');
         });
     }
 

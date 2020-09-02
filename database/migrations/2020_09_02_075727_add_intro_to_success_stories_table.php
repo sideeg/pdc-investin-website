@@ -14,8 +14,8 @@ class AddIntroToSuccessStoriesTable extends Migration
     public function up()
     {
         Schema::table('success_stories', function (Blueprint $table) {
-            $table->string('intro_ar');
-            $table->string('intro_en');
+            $table->text('intro_ar');
+            $table->text('intro_en');
         });
     }
 

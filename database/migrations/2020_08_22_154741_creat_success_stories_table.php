@@ -17,7 +17,7 @@ class CreatSuccessStoriesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('icon');
-            $table->string('text');
+            $table->text('text');
             $table->timestamps();
         });
     }

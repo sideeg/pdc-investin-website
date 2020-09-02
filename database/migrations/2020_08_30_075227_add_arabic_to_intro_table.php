@@ -14,7 +14,7 @@ class AddArabicToIntroTable extends Migration
     public function up()
     {
         Schema::table('intro', function (Blueprint $table) {
-            $table->string('text_ar');
+            $table->text('text_ar');
             $table->renameColumn('text',"text_en");
             $table->renameColumn('section_name',"section_name_en");
             $table->string('section_name_ar');

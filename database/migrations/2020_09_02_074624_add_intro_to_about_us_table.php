@@ -14,8 +14,8 @@ class AddIntroToAboutUsTable extends Migration
     public function up()
     {
         Schema::table('about_us', function (Blueprint $table) {
-            $table->string('intro_ar');
-            $table->string('intro_en');
+            $table->text('intro_ar');
+            $table->text('intro_en');
         });
     }
 

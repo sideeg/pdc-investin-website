@@ -15,7 +15,7 @@ class AddArabicSectorNameToSectorTable extends Migration
     {
         Schema::table('sector', function (Blueprint $table) {
             $table->renameColumn('sector_name',"sector_name_en");
-            $table->string('sector_name_ar');
+            $table->text('sector_name_ar');
         });
     }
 

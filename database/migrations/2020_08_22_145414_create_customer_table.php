@@ -20,8 +20,8 @@ class CreateCustomerTable extends Migration
             $table->string('email')->unique();
             $table->string('phone_number')->unique();
             $table->string('password');
-            $table->string('agent_id');
-            $table->string('num_of_shares')->nullable();
+            $table->bigInteger('agent_id');
+            $table->bigInteger('num_of_shares')->nullable();
             $table->timestamps();
         });
     }

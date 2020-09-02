@@ -14,10 +14,10 @@ class AddArabicToSectorTable extends Migration
     public function up()
     {
         Schema::table('sector', function (Blueprint $table) {
-            $table->string('text_ar');
+            $table->text('text_ar');
             $table->renameColumn('text',"text_en");
             $table->renameColumn('Brief',"Brief_en");
-            $table->string('Brief_ar');
+            $table->text('Brief_ar');
 
         });
     }
