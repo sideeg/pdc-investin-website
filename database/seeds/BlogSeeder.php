@@ -11,6 +11,7 @@ class BlogSeeder extends Seeder
      */
     public function run()
     {
+        for($i = 0; $i < 100; $i++) {
         DB::table('blog')->insert([
 
             [
@@ -56,4 +57,5 @@ class BlogSeeder extends Seeder
 
         ]);
     }
+}
 }
