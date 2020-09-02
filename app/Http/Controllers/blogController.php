@@ -22,6 +22,6 @@ class blogController extends Controller
 
     public function blogById( $id)
     {
-        return( "",blog::find($id));
+        return view( "")->with("blog",blog::find($id));
     }
 }
