@@ -31,7 +31,13 @@ class sectorController extends Controller
     public function order(Request $request)
 {
     $data = $request->validate([
-        'service' => ['required', 'min:3'],
+        'name' => ['required'],
+        'address' => ['required'],
+        'session_id' => ['required'],
+        'phone_number' => ['required'],
+        'num_of_taken_share' => ['required'],
+
+
      ]);
     $ins = $data->all();
     

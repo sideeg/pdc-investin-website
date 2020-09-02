@@ -16,7 +16,7 @@ class session extends Model
     
     protected $fillable = [
 
-        'session_name_ar','session_name_en', 'start_date',
+        'session_name_ar','session_name_en', 'start_date','detials_ar','detials_en',
          'end_date',"total_num_of_shares","num_of_taken_share","sector_id"
     ];
 
@@ -33,7 +33,7 @@ class session extends Model
 
     public function getTakenSharesPresentAttribute()
 	{
-        return  ($this->num_of_taken_share / $this->total_num_of_shares)*100;
+        return  number_format(($this->num_of_taken_share / $this->total_num_of_shares)*100,2);
     }
 
 

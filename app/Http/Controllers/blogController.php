@@ -22,6 +22,6 @@ class blogController extends Controller
 
     public function blogById( $id)
     {
-        dd(json_encode( blog::find($id)));
+        return( "",blog::find($id));
     }
 }
