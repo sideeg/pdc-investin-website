@@ -13,6 +13,6 @@ class message extends Model
     
     protected $fillable = [
 
-        'name', 'address', 'message',"phone_number","created_at","updated_at"
+        'name', 'email',"subject", 'message',"created_at","updated_at"
     ];
 }
