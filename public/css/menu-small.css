@@ -64,15 +64,16 @@
 
 }
 
-.active {
+.current {
     text-transform: uppercase;
     position: relative;
-    /* display: flex; */
-    /* align-items: flex-end;
+    color: #009F61 !important;
+    /* display: flex;
+    align-items: flex-end;
     justify-content: center; */
 }
 
-.active::after {
+.current::after {
     content: '\A';
     width: 8px;
     height: 8px;

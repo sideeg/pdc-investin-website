@@ -4,8 +4,8 @@
     <div class="container row mx-0 d-flex justify-content-center">
         {{-- <div class="row"> --}}
             <!-- LOGO -->
-            <a class="navbar-brand logo text-green" href="index.html">
-                <img src="images/Investin-logo.png" alt="missing_logo" height="40">
+            <a class="navbar-brand logo text-green" href="/">
+                <img src="{{ asset('images/Investin-logo.png') }}" alt="missing_logo" height="40">
                 <!-- Invesin -->
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,46 +13,38 @@
             </button>    
         {{-- </div> --}}
         <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-center text-center" id="mySidenav">
-                <li class="nav-item active">
-                    <a href="index.html" class="nav-link px-0 text-uppercase">Home</a>
-                </li>
-                <li class="nav-item"> 
-                    <a href="#about" class="nav-link px-0 text-uppercase">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="sector.html" class="nav-link px-0 text-uppercase">Investment Sectors</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#network" class="nav-link px-0 text-uppercase">Network</a>
-                </li>
-                <li class="nav-item">
-                    <a href="blog.html" class="nav-link px-0 text-uppercase">Blog</a>
-                </li>
-                
-                <li class="nav-item">
-                    <span class="nav-link px-0">
-                        <a href="{{ url('locale/en') }}" class="">English</a>/
-                        <a href="{{ url('locale/ar') }}" class="">Arabic</a>
-                    </span>
-                
-                </li>
-                <!-- <li class="has-submenu">
-                    <a href="javascript:void(0)">lang</a>
-                    <span class="menu-arrow"></span>
-                    <ul class="submenu">
-                        <li><a href="">EN</a></li> 
-                        <li><a href="">AR</a></li> 
-                    </ul>
-                </li> -->
-                <!-- <div class="ml-auto d-flex">
-                    <li class="nav-item">
-                        <a href="#team" class="nav-link">Team</a>
+            <ul class="navbar-nav navbar-center px-auto text-center" id="mySidenav">
+                {{-- <div class="row"> --}}
+                    <li class="nav-item current">
+                    <a href="/" class="nav-link px-0 text-uppercase">{{ __('content.home')}}</a>
+                    </li>
+                    <li class="nav-item"> 
+                        <a href="#about" class="nav-link px-0 text-uppercase">{{ __('content.about')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#contact" class="nav-link last-elements">Contact</a>
+                        <a href="sectors/1" class="nav-link px-0 text-uppercase">{{ __('content.investmentSectors')}}</a>
                     </li>
-                </div> -->
+                    <li class="nav-item">
+                        <a href="#network" class="nav-link px-0 text-uppercase">{{ __('content.network')}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="blogs" class="nav-link px-0 text-uppercase">{{ __('content.blog')}}</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <span class="nav-link px-0">
+                            @if (App::getLocale() == 'en')
+                            <img src="{{asset('images/sudan.svg')}}" class="lang-svg" alt=""> <a href="{{ url('locale/ar') }}" class="mx-1">{{__('content.arabic')}}</a> 
+    
+                                {{-- <span class="row justify-content-center"> <img src="{{asset('images/logo/sudan.svg')}}" class="lang-svg mx-1" alt=""> <a href="{{route('locale_ar')}}" class=" ">{{ __('content.arabic')}}</a> &nbsp;/&nbsp; <img src="{{asset('images/logo/united-kingdom.svg')}}" class="lang-svg mx-1" alt=""> <a href="{{route('locale_en')}}">{{ __('content.english')}}</a></span> --}}
+    
+                            @else
+                            <a href="{{ url('locale/en') }}" class=""><img src="{{asset('images/united-kingdom.svg')}}" class="lang-svg mx-1" alt=""> {{__('content.english')}}</a>
+                            @endif
+                        </span>
+                    </li>
+                       
+                {{-- </div> --}}
             </ul>
             {{-- <ul class="navbar-nav navbar-center ml-auto" id="mySidenav">
                 <li class="nav-item">

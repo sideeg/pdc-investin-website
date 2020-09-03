@@ -6,6 +6,8 @@
         <script src="{{ asset('js/scrollspy.min.js') }}"></script>
         <!-- easing -->
         <script src="{{ asset('js/jquery.easing.min.js') }}"></script>
+        <script src="{{ asset('js/jquery.easypiechart.min.js') }}"></script>
+
         <!-- Read More -->
         <script src="{{ asset('js/jquery.show-more.js') }}"></script>
         <!-- Portfolio -->
@@ -37,4 +39,7 @@
                     animationspeed: 250
                 });
             });
+
+            $('.chart').easyPieChart();
+
         </script>

@@ -15,7 +15,7 @@
                                 <img src="images/Investin-logo.png" class="mb-2 home-logo" alt="missing_logo">
                                 <!-- <h1 class="text-green">INVESTIN</h1> -->
 
-                                <h2 class="text-black">INVESTMENT COMPANY</h2>
+                                <h2 class="text-black text-uppercase word-keep">{{ __('content.investmentCompany')}}</h2>
                                 <div class="row justify-content-center">
                                 <p class="text-black landing-3 col-lg-6 col-md-6 col-sm-12">
                                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit cumque voluptatem ipsam ab hic explicabo reprehenderit est exercitationem animi nemo quas accusantium maxime, delectus vel nisi vero obcaecati ipsa nostrum.
@@ -44,7 +44,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="title-heading">
-                        <h2 class="color-green text-center dot">about us</h2>
+                        <h2 class="color-green text-center word-keep dot">{{ __('content.aboutUs')}}</h2>
                         <div class="row justify-content-center">
                         <p class="mx-auto my-3 text-center col-lg-6 col-md-6 col-sm-12">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
 
@@ -81,7 +81,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="title-heading">
-                        <h2 class="text-uppercase text-center text-white dot-white">INVESTMENT SECTORS</h2>
+                        <h2 class="text-uppercase text-center text-white word-keep dot-white">{{ __('content.investmentSectors')}}</h2>
                         <div class="row justify-content-center">
                         <p class="mx-auto my-4 text-center text-white col-lg-6 col-md-6 col-sm-12">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, voluptates?</p>
 
@@ -93,7 +93,7 @@
                                         <div class="fe-icon row ">
                                             <!-- <i class="fas fa-seedling"></i> -->
                                             <img src="images/blog/blog-10.jpg" alt="" srcset="">
-                                            <h3>Agriculture Sector</h3>
+                                            <h3 class="word-keep">Agriculture Sector</h3>
                                         </div>
                                         <div class="fe-head">
                                             <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled</p>
@@ -106,7 +106,7 @@
                                         <div class="fe-icon row">
                                             <!-- <i class="fas fa-desktop"></i> -->
                                             <img src="images/blog/blog-10.jpg"  alt="" srcset="">
-                                            <h3>Technology Sector</h3>
+                                            <h3 class="word-keep">Technology Sector</h3>
                                         </div>
                                         <div class="fe-head">
                                             <p>It is a long established fact that a reader will be distracted by the readable content of at its layout.</p>
@@ -119,7 +119,7 @@
                                         <div class="fe-icon row">
                                             <!-- <i class="fas fa-industry"></i> -->
                                             <img src="images/blog/blog-10.jpg"  alt="" srcset="">
-                                            <h3>Industry Sector</h3>
+                                            <h3 class="word-keep">Industry Sector</h3>
                                         </div>
                                         <div class="fe-head">
                                             <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their text, and a search.</p>
@@ -139,7 +139,7 @@
     <section class="section bg-grey">
         <div class="container">
             <div class="title-heading text-center">
-                <h2 class="text-uppercase dot">Our Network</h2>
+                <h2 class="text-uppercase word-keep dot">{{ __('content.ourNetwork')}}</h2>
                 <p class="mx-auto text-center my-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, voluptates?</p>
                 <div class="container">
                     <div class="row justify-content-center">
@@ -238,7 +238,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="title-heading text-center">
-                        <h2 class="text-uppercase text-white dot-white">Blog</h2>
+                        <h2 class="text-uppercase text-white word-keep dot-white">{{ __('content.blog')}}</h2>
                         <p class="mx-auto my-5 text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, voluptates?</p>
                         <div class="container">
                             <div class="row blog align-items-start">
@@ -247,13 +247,13 @@
                                         <div class="first-section">
                                             <img src="images/about/about-page.jpg" class="img-responsive img-blog-top" alt="" srcset="">
                                             <div class="first-section-overlay"></div>
-                                            <h4 class="blog-title text-white">Sunset in North Sudan</h4>
+                                            <h4 class="blog-title text-white word-keep">Sunset in North Sudan</h4>
                                         </div>
                                         <div class="second-section">
                                             <p class="text-left mx-4 mt-2">
                                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis nemo odio alias molestiae obcaecati facilis neque esse minus assumenda possimus.
                                             </p>
-                                            <p class="text-muted text-small text-left mx-4 pb-4 row"><i class="mdi mdi-calendar text-black mx-1"></i> <span class=""> 12 November 2020</span></p>
+                                            <p class="text-muted text-small text-left mx-4 pb-4 d-block row"><i class="mdi mdi-calendar text-black mx-1"></i> <span class=""> 12 November 2020</span></p>
                                         </div>
                                     </div>
                                 </div>
@@ -262,7 +262,7 @@
                                         <div class="first-section">
                                             <img src="images/about/about-page.jpg" class="img-responsive img-blog-top" alt="" srcset="">
                                             <div class="first-section-overlay"></div>
-                                            <h4 class="blog-title text-white">Sunset in North Sudan</h4>
+                                            <h4 class="blog-title text-white word-keep">Sunset in North Sudan</h4>
                                         </div>
                                         <div class="second-section">
                                             <p class="text-left  mx-4 mt-2">
@@ -281,7 +281,7 @@
                                         <div class="first-section">
                                             <img src="images/about/about-page.jpg" class="img-responsive img-blog-top" alt="" srcset="">
                                             <div class="first-section-overlay"></div>
-                                            <h4 class="blog-title text-white">Sunset in North Sudan</h4>
+                                            <h4 class="blog-title text-white word-keep">Sunset in North Sudan</h4>
                                         </div>
                                         <div class="second-section">
                                             <p class="text-left  mx-4 mt-2">
@@ -296,7 +296,7 @@
                     </div>
                 </div>
             </div>
-            <h4 class="text-center text-white mt-5 more-arrow">more</h4>
+            <h4 class="text-center text-white mt-5 more-arrow">{{ __('content.more')}}</h4>
         </div>
     </section>
     <!-- BLOG END -->
@@ -307,7 +307,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="title-heading">
-                        <h2 class="text-uppercase text-center text-green dot">Success Stories</h2>
+                        <h2 class="text-uppercase text-center text-green dot">{{ __('content.successStories')}}</h2>
                         <p class="mx-auto my-5 text-muted text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, voluptates?</p>
                         <div class="container">
                             <div class="row justify-content-center">
@@ -432,7 +432,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="title-heading">
-                        <h2 class="text-uppercase text-center text-green dot">Contact Us</h2>
+                        <h2 class="text-uppercase text-center text-green word-keep dot">{{ __('content.contactUs')}}</h2>
 
                         <div class="container mt-5">
                             <div class="row justify-content-space">
@@ -442,28 +442,21 @@
                                             <div class="input-data">
                                                 <input type="text" required >
                                                 <div class="underline"></div>
-                                                <label for="">full name</label>
-                                            </div>
-                                            <div class="input-data">
-                                                <input type="text" required >
-                                                <div class="underline"></div>
-                                                
-                                                <label for="">phone</label>
-                                                
+                                                <label for="">{{ __('content.fullName')}}</label>
                                             </div>
                                             <div class="input-data">
                                                 <input type="text" required>
                                                 <div class="underline"></div>
                                                 
-                                                <label for="">email</label>
+                                                <label for="">{{ __('content.email')}}</label>
                                             </div>
                                             <div class="form-group">
-                                                <label for="message" class="text-white">Message</label>
+                                                <label for="message" class="text-white">{{__('content.message')}}</label>
                                                 <textarea name="" id="message" class="form-control" cols="30" rows="10"></textarea>
 
                                             </div>
 
-                                            <button type="submit" class="btn btn-contact text-uppercase py-2"> Send Message</button>
+                                            <button type="submit" class="btn btn-contact text-uppercase py-2"> {{ __('content.sendMessage')}}</button>
 
                                         </div>
                                     </form>
