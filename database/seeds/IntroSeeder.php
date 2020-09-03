@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class IntroSeeder extends Seeder
 {
@@ -14,7 +16,7 @@ class IntroSeeder extends Seeder
         DB::table('intro')->insert([
 
             [
-                'icon' => 'home/bg-blog',
+                'icon' => 'home/bg-blog.jpg',
                 'intro_en' => Str::random(35),
                 'intro_ar' => Str::random(20),
                 'section_name_en' => Str::random(20),
@@ -25,7 +27,7 @@ class IntroSeeder extends Seeder
                 'updated_at' => date('Y-m-d H:i:s'),
             ],
             [
-                'icon' => 'home/bg-blog',
+                'icon' => 'home/bg-blog.jpg',
                 'intro_en' => Str::random(35),
                 'intro_ar' => Str::random(20),
                 'section_name_en' => Str::random(20),
@@ -36,7 +38,7 @@ class IntroSeeder extends Seeder
                 'updated_at' => date('Y-m-d H:i:s'),
             ],
             [
-                'icon' => 'home/bg-blog',
+                'icon' => 'home/bg-blog.jpg',
                 'intro_en' => Str::random(35),
                 'intro_ar' => Str::random(20),
                 'section_name_en' => Str::random(20),

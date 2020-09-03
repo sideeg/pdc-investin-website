@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\sector;
 use App\session;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class sectorController extends Controller
 {

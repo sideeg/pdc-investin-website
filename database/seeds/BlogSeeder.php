@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
+
 
 class BlogSeeder extends Seeder
 {
@@ -15,7 +18,7 @@ class BlogSeeder extends Seeder
         DB::table('blog')->insert([
 
             [
-                'image' => 'Investin-logo',
+                'image' => 'Investin-logo.png',
                 'intro_en' => Str::random(15),
                 'intro_ar' => Str::random(20),
                 'blog_name_ar' => Str::random(20),
@@ -29,7 +32,7 @@ class BlogSeeder extends Seeder
                 'updated_at' => date('Y-m-d H:i:s'),
             ],
             [
-                'image' => 'blog/blog-4',
+                'image' => 'blog/blog-4.jpg',
                 'intro_en' => Str::random(15),
                 'intro_ar' => Str::random(20),
                 'blog_name_ar' => Str::random(20),
@@ -42,7 +45,7 @@ class BlogSeeder extends Seeder
                 'updated_at' => date('Y-m-d H:i:s'),
             ],
             [
-                'image' => 'blog/blog-3',
+                'image' => 'blog/blog-3.jpg',
                 'intro_en' => Str::random(15),
                 'intro_ar' => Str::random(20),
                 'blog_name_ar' => Str::random(20),

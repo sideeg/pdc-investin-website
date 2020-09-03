@@ -4,7 +4,7 @@
 
 
     <!-- HOME START-->
-    <section class="bg-half" style="background-image: url('images/home/bg-home-7.jpg');object-fit: contain;" id="home">
+    <section class="bg-half" style="background-image: url('{{ $intro->icon_full_path }}');object-fit: contain;" id="home">
         <div class="bg-overlay"></div>
         <div class="home-center">
             <div class="home-desc-center">
@@ -18,8 +18,11 @@
                                 <h2 class="text-black text-uppercase word-keep">{{ __('content.investmentCompany')}}</h2>
                                 <div class="row justify-content-center">
                                 <p class="text-black landing-3 col-lg-6 col-md-6 col-sm-12">
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit cumque voluptatem ipsam ab hic explicabo reprehenderit est exercitationem animi nemo quas accusantium maxime, delectus vel nisi vero obcaecati ipsa nostrum.
-                                
+                                    @if (App::getLocale() == 'en')
+                                        {{ $intro->intro_en}}
+                                    @else
+                                        {{ $intro->intro_ar}}
+                                    @endif
                                 </p>
                                     
                                 </div>
@@ -46,7 +49,13 @@
                     <div class="title-heading">
                         <h2 class="color-green text-center word-keep dot">{{ __('content.aboutUs')}}</h2>
                         <div class="row justify-content-center">
-                        <p class="mx-auto my-3 text-center col-lg-6 col-md-6 col-sm-12">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                        <p class="mx-auto my-3 text-center col-lg-6 col-md-6 col-sm-12">
+                            @if (App::getLocale() == 'en')
+                                {{ $about_us->intro_en}}
+                            @else
+                                {{ $about_us->intro_ar}}
+                            @endif
+                        </p>
 
                         </div>
                         <div class="row justify-content-center">
@@ -57,6 +66,21 @@
                                             <div class="col-12 text-green font-b">2014</div>
                                             <div class="col-12 mb-5">Establishment of the company</div>
                                         </div>
+                                        @if (App::getLocale() == 'en')
+                                            @foreach ($about_us as $item)
+                                                <div class="col-12 row m-0 time-line">
+                                                <div class="col-12 text-green font-b">{{ $item->date}}</div>
+                                                    <div class="col-12 mb-5">{{ $item->action_en}}</div>
+                                                </div>    
+                                            @endforeach
+                                        @else
+                                            @foreach ($about_us as $item)
+                                                <div class="col-12 row m-0 time-line">
+                                                <div class="col-12 text-green font-b">{{ $item->date}}</div>
+                                                    <div class="col-12 mb-5">{{ $item->action_ar}}</div>
+                                                </div>    
+                                            @endforeach
+                                        @endif
                                         <div class="col-12 row  m-0 time-line">
                                             <div class="col-12 text-green font-b">2015 - 2018</div>
                                             <div class="col-12 mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, numquam!</div>
@@ -65,7 +89,11 @@
                                 </div>
                             </div>
                             <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12">
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima numquam beatae aliquid architecto necessitatibus voluptatibus, asperiores accusamus aspernatur quas exercitationem quos at. Ad dolorum, magni tempora sapiente voluptatum deserunt deleniti fugit nostrum veritatis perspiciatis vel error necessitatibus cupiditate atque magnam recusandae voluptate adipisci ut! Id numquam, nam, accusantium earum totam temporibus tempora maiores natus repudiandae eius, possimus ducimus quod quisquam.
+                                @if (App::getLocale() == 'en')
+                                    {{ $about_us->text_en[0] }}
+                                @else
+                                    {{ $about_us->text_ar[0] }}
+                                @endif
                             </div>
                         </div>
                     </div>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatMessageTable extends Migration
+class CreateSuccessStoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreatMessageTable extends Migration
      */
     public function up()
     {
-        Schema::create('message', function (Blueprint $table) {
+        Schema::create('success_stories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('address');
-            $table->text('message');
-            $table->string('phone_number');
+            $table->string('icon');
+            $table->text('text');
             $table->timestamps();
         });
     }
@@ -30,6 +29,7 @@ class CreatMessageTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('success_stories');
+
     }
 }
