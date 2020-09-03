@@ -32,7 +32,9 @@ class homeController extends Controller
         $sector = json_encode(sector::select('id','sector_name_en','sector_name_ar', 'Brief_en','Brief_ar','icon')->get());
         $about_us = json_encode(about_us::all());
         $intro = intro::all();
+        
         dd($intro);
+        
         return view('index')->with('intro',$intro )->with('about_us',$about_us )
         ->with('sector',$sector )->with('our_network',$our_network )->with('blog',$blog )
         ->with('success_stories',$success_stories );
