@@ -16,9 +16,9 @@ class CreatMessageTable extends Migration
         Schema::create('message', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('address');
+            $table->string('addrsubjectess');
             $table->text('message');
-            $table->string('phone_number');
+            $table->string('email');
             $table->timestamps();
         });
     }
