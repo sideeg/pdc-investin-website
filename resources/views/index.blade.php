@@ -116,19 +116,44 @@
                         </div>
                         <div class="container">
                             <div class="row">
-                                <div class="col-md-4">
-                                    <div class="feature">
-                                        <div class="fe-icon row ">
-                                            <!-- <i class="fas fa-seedling"></i> -->
-                                            <img src="images/blog/blog-10.jpg" alt="" srcset="">
-                                            <h3 class="word-keep">Agriculture Sector</h3>
+                                
+
+                                @if (App::getLocale() == 'en')
+                                    @foreach($sector as $item)
+                                        <div class="col-md-4">
+                                            <div class="feature">
+                                                <div class="fe-icon row ">
+                                                    <!-- <i class="fas fa-seedling"></i> -->
+                                                    <img src="images/blog/blog-10.jpg" alt="" srcset="">
+                                                    <h3 class="word-keep">{{ $item->sector_name_en}}</h3>
+                                                </div>
+                                                <div class="fe-head">
+                                                    <p>
+                                                        {{ $item->Brief_en}}
+                                                    </p>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="fe-head">
-                                            <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled</p>
+                                    @endforeach
+                                @else
+                                    @foreach($sector as $item)
+                                        <div class="col-md-4">
+                                            <div class="feature">
+                                                <div class="fe-icon row ">
+                                                    <!-- <i class="fas fa-seedling"></i> -->
+                                                    <img src="images/blog/blog-10.jpg" alt="" srcset="">
+                                                    <h3 class="word-keep">{{ $item->sector_name_ar}}</h3>
+                                                </div>
+                                                <div class="fe-head">
+                                                    <p>
+                                                        {{ $item->Brief_ar}}
+                                                    </p>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-            
+                                    @endforeach
+                                @endif
+
                                 <div class="col-md-4">
                                     <div class="feature">
                                         <div class="fe-icon row">
