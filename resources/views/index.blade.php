@@ -111,7 +111,13 @@
                     <div class="title-heading">
                         <h2 class="text-uppercase text-center text-white word-keep dot-white">{{ __('content.investmentSectors')}}</h2>
                         <div class="row justify-content-center">
-                        <p class="mx-auto my-4 text-center text-white col-lg-6 col-md-6 col-sm-12">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, voluptates?</p>
+                        <p class="mx-auto my-4 text-center text-white col-lg-6 col-md-6 col-sm-12">
+                            @if (App::getLocale() == 'en')
+                                {{ $sector->first()->intro_en}}        
+                            @else
+                                {{ $sector->first()->intro_ar}}    
+                            @endif
+                        </p>
 
                         </div>
                         <div class="container">
@@ -193,7 +199,13 @@
         <div class="container">
             <div class="title-heading text-center">
                 <h2 class="text-uppercase word-keep dot">{{ __('content.ourNetwork')}}</h2>
-                <p class="mx-auto text-center my-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, voluptates?</p>
+                <p class="mx-auto text-center my-5">
+                    @if (App::getLocale() == 'en')
+                        {{ $our_network->first()->intro_en}}        
+                    @else
+                        {{ $our_network->first()->intro_ar}}    
+                    @endif
+                </p>
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
@@ -292,25 +304,54 @@
                 <div class="col-md-12">
                     <div class="title-heading text-center">
                         <h2 class="text-uppercase text-white word-keep dot-white">{{ __('content.blog')}}</h2>
-                        <p class="mx-auto my-5 text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, voluptates?</p>
+                        <p class="mx-auto my-5 text-white">
+                            @if (App::getLocale() == 'en')
+                                {{ $blog->first()->intro_en}}        
+                            @else
+                                {{ $blog->first()->intro_ar}}    
+                            @endif
+                        </p>
                         <div class="container">
                             <div class="row blog align-items-start">
-                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                    <div class="post-articles">
-                                        <div class="first-section">
-                                            <img src="images/about/about-page.jpg" class="img-responsive img-blog-top" alt="" srcset="">
-                                            <div class="first-section-overlay"></div>
-                                            <h4 class="blog-title text-white word-keep">Sunset in North Sudan</h4>
+                                
+                                @if (App::getLocale() == 'en')
+                                    @foreach ($blog as $item)
+                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                            <div class="post-articles">
+                                                <div class="first-section">
+                                                    <img src="images/about/about-page.jpg" class="img-responsive img-blog-top" alt="" srcset="">
+                                                    <div class="first-section-overlay"></div>
+                                                    <h4 class="blog-title text-white word-keep">{{ $item->blog_name_en}}</h4>
+                                                </div>
+                                                <div class="second-section">
+                                                    <p class="text-left mx-4 mt-2">
+                                                        {{ $item->Brief_en}}
+                                                    </p>
+                                                <p class="text-muted text-small text-left mx-4 pb-4 d-block row"><i class="mdi mdi-calendar text-black mx-1"></i> <span class=""> {{ $item->created_at}}</span></p>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="second-section">
-                                            <p class="text-left mx-4 mt-2">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis nemo odio alias molestiae obcaecati facilis neque esse minus assumenda possimus.
-                                            </p>
-                                            <p class="text-muted text-small text-left mx-4 pb-4 d-block row"><i class="mdi mdi-calendar text-black mx-1"></i> <span class=""> 12 November 2020</span></p>
+                                    @endforeach        
+                                @else
+                                    @foreach ($blog as $item)
+                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                            <div class="post-articles">
+                                                <div class="first-section">
+                                                    <img src="images/about/about-page.jpg" class="img-responsive img-blog-top" alt="" srcset="">
+                                                    <div class="first-section-overlay"></div>
+                                                    <h4 class="blog-title text-white word-keep">{{ $item->blog_name_ar}}</h4>
+                                                </div>
+                                                <div class="second-section">
+                                                    <p class="text-left mx-4 mt-2">
+                                                        {{ $item->Brief_ar}}
+                                                    </p>
+                                                <p class="text-muted text-small text-left mx-4 pb-4 d-block row"><i class="mdi mdi-calendar text-black mx-1"></i> <span class=""> {{ $item->created_at}}</span></p>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    @endforeach    
+                                @endif
+                                {{-- <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                                     <div class="post-articles">
                                         <div class="first-section">
                                             <img src="images/about/about-page.jpg" class="img-responsive img-blog-top" alt="" srcset="">
@@ -343,7 +384,7 @@
                                             <p class="text-muted text-small text-left mx-4 pb-4">12 November 2020</p>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
@@ -361,25 +402,60 @@
                 <div class="col-md-12">
                     <div class="title-heading">
                         <h2 class="text-uppercase text-center text-green dot">{{ __('content.successStories')}}</h2>
-                        <p class="mx-auto my-5 text-muted text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, voluptates?</p>
+                        <p class="mx-auto my-5 text-muted text-center">
+                            @if (App::getLocale() == 'en')
+                                {{ $success_stories->first()->intro_en}}
+                            @else
+                                {{ $success_stories->first()->intro_ar}}
+                            @endif
+                        </p>
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div id="owl-success-stories" class="owl-crousel">
-                                    <div class="col-lg-4 col-md-6 col-sm-12 bg-white m-2 success-story item">
-                                        <div class="row w-100">
-                                            <div class="col-3">
-                                                <!-- <a href="https://fontawesome.com/icons?d=gallery&q=arrow&m=free" target="_blank"> -->
-                                                <img src="images/about/about-page.jpg" class="success-avatar my-2" alt="" srcset="">
-                                                <!-- </a> -->
-                                            </div>
-                                            <div class="col-9 success-name">
-                                                <h5 class="my-2">mohammed saeed</h5>
-                                                <span>3 Days Later</span>
-                                            </div>
-                                        </div>
-                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic autem ratione laborum modi, obcaecati saepe dolorum aliquid? Magni, nulla minus!</p>
-                                    </div>
                                     
+                                    @if (App::getLocale() == 'en')
+                                        @forelse ($success_stories as $item)
+                                            <div class="col-lg-4 col-md-6 col-sm-12 bg-white m-2 success-story item">
+                                                <div class="row w-100">
+                                                    <div class="col-3">
+                                                        <!-- <a href="https://fontawesome.com/icons?d=gallery&q=arrow&m=free" target="_blank"> -->
+                                                        <img src="images/about/about-page.jpg" class="success-avatar my-2" alt="" srcset="">
+                                                        <!-- </a> -->
+                                                    </div>
+                                                    <div class="col-9 success-name">
+                                                        <h5 class="my-2">{{ $item->name_en}}</h5>
+                                                        <span>{{ $item->created_at->diffForHumans()}}</span>
+                                                    </div>
+                                                </div>
+                                                <p>
+                                                    {{ $item->text_en}}    
+                                                </p>
+                                            </div>
+                                        @empty
+                                            
+                                        @endforelse
+                                    @else
+                                        @forelse ($success_stories as $item)
+                                            <div class="col-lg-4 col-md-6 col-sm-12 bg-white m-2 success-story item">
+                                                <div class="row w-100">
+                                                    <div class="col-3">
+                                                        <!-- <a href="https://fontawesome.com/icons?d=gallery&q=arrow&m=free" target="_blank"> -->
+                                                        <img src="images/about/about-page.jpg" class="success-avatar my-2" alt="" srcset="">
+                                                        <!-- </a> -->
+                                                    </div>
+                                                    <div class="col-9 success-name">
+                                                        <h5 class="my-2">{{ $item->name_ar}}</h5>
+                                                        <span>{{ $item->created_at->diffForHumans()}}</span>
+                                                    </div>
+                                                </div>
+                                                <p>
+                                                    {{ $item->text_ar}}    
+                                                </p>
+                                            </div>
+                                        @empty
+                                            
+                                        @endforelse
+                                    @endif
                                     <div class="col-lg-4 col-md-6 col-sm-12 bg-white m-2 success-story item">
                                         <div class="row w-100">
                                             <div class="col-3">
@@ -490,22 +566,27 @@
                         <div class="container mt-5">
                             <div class="row justify-content-space">
                                 <div class="col-lg-4 col-md-4 col-sm-12">
-                                    <form action="#" class="p-4 bg-green custom-form">
+                                    <form action="{{ route('contact')}}" method="POST" class="p-4 bg-green custom-form">
+                                        @csrf
                                         <div class="">
                                             <div class="input-data">
-                                                <input type="text" required >
+                                                <input type="text" name="name" required >
                                                 <div class="underline"></div>
                                                 <label for="">{{ __('content.fullName')}}</label>
                                             </div>
                                             <div class="input-data">
-                                                <input type="text" required>
+                                                <input type="text" name="email" required>
                                                 <div class="underline"></div>
-                                                
                                                 <label for="">{{ __('content.email')}}</label>
+                                            </div>
+                                            <div class="input-data">
+                                                <input type="text" name="subject" required>
+                                                <div class="underline"></div>
+                                                <label for="">{{ __('content.subject')}}</label>
                                             </div>
                                             <div class="form-group">
                                                 <label for="message" class="text-white">{{__('content.message')}}</label>
-                                                <textarea name="" id="message" class="form-control" cols="30" rows="10"></textarea>
+                                                <textarea name="message" id="message" class="form-control" cols="30" rows="10"></textarea>
 
                                             </div>
 

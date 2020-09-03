@@ -24,10 +24,11 @@ Route::get('locale/{locale}', function ($locale){
 
 
 Route::get("/","homeController@index");
-Route::get("/blogs","blogController@index");
-Route::get("/blogs/{id}","blogController@blogById");
-Route::get("/sectors/{id}","sectorController@index");
-Route::get("/sectors/{id}/order","sectorController@showForm");
+Route::post("/contact","homeController@message")->name('contact');
+Route::get("/blog","blogController@index")->name('blog');
+Route::get("/article/{id}","blogController@blogById")->name('article');
+Route::get("/sector/{id}","sectorController@index");
+Route::get("/sector/{id}/order","sectorController@showForm");
 
 
 

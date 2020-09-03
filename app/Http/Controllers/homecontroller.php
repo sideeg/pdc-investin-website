@@ -26,10 +26,10 @@ class homeController extends Controller
     public function index()
     {
         // return view('index');
-        // dd(json_encode( success_stories::select('icon','name_en','name_ar', 'text_en','text_ar',"created_at")->get()));
-        $success_stories = json_encode(success_stories::select('icon','name_en','name_ar','text_ar', 'text_en','text_ar',"created_at")->get());
-        $blog =json_encode( blog::select('id','blog_name_en','blog_name_ar', 'Brief_en','Brief_ar',"created_at","image")->take(3)->get());
-        $our_network = json_encode(our_network::all());
+        // dd( success_stories::select('icon','name_en','name_ar', 'text_en','text_ar',"created_at")->get()));
+        $success_stories = success_stories::select('icon','name_en','name_ar','text_ar', 'text_en','text_ar',"created_at")->get();
+        $blog = blog::select('id','intro_en','intro_ar','blog_name_en','blog_name_ar', 'Brief_en','Brief_ar',"created_at","image")->take(3)->get();
+        $our_network = our_network::all();
         $sector = sector::select('id','sector_name_en','sector_name_ar', 'Brief_en','Brief_ar','icon')->get();
         $about_us = about_us::all();
         $intro = intro::all();
@@ -41,6 +41,7 @@ class homeController extends Controller
 
     public function message(Request $data)
 {
+    dd('I am here');
     $ins = $data->all();
     
     $store = DB::table("message")->insert([$ins]);
