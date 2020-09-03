@@ -28,12 +28,12 @@ class homeController extends Controller
         // return view('index');
         // dd(json_encode( success_stories::select('icon','name_en','name_ar', 'text_en','text_ar',"created_at")->get()));
         $success_stories = json_encode(success_stories::select('icon','name_en','name_ar','text_ar', 'text_en','text_ar',"created_at")->get());
-        $blog =json_encode( blog::select('id','blog_name_en','blog_name_ar', 'Brief_en','Brief_ar',"created_at","image")->take(3)->get());
-        $our_network = json_encode(our_network::all());
-        $sector = sector::select('id','sector_name_en','sector_name_ar', 'Brief_en','Brief_ar','icon')->get();
+        $blog =json_encode( blog::select('id','intro_en','intro_ar','blog_name_en','blog_name_ar', 'Brief_en','Brief_ar',"created_at","image")->take(3)->get());
+        $our_network = json_decode(our_network::all());
+        $sector = json_decode(sector::select('id','sector_name_en','sector_name_ar', 'Brief_en','Brief_ar','icon')->get());
         $about_us = about_us::all();
-        $intro = intro::all();
-        // dd($intro);
+        $intro = json_decode( intro::all());
+        //   dd($our_network);
         return view('index')->with('intro',$intro )->with('about_us',$about_us )
         ->with('sector',$sector )->with('our_network',$our_network )->with('blog',$blog )
         ->with('success_stories',$success_stories );

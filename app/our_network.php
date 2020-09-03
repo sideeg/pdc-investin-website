@@ -11,7 +11,7 @@ class our_network extends Model
 
 
     
-    protected $appends = ['photo_full_path'];
+    protected $appends = ['logo_full_path'];
     
     protected $fillable = [
 
@@ -19,7 +19,7 @@ class our_network extends Model
     ];
 
 
-	public function getPhotoFullPathAttribute()
+	public function getLogoFullPathAttribute()
 	{
 		return isset($this->attributes['logo']) ?  '/images/' . $this->attributes['logo'] : null;
     }

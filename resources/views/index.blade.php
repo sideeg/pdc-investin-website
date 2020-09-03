@@ -4,7 +4,7 @@
 
 
     <!-- HOME START-->
-    <section class="bg-half" style="background-image: url('images/{{ asset($intro->first()->icon) }}');object-fit: contain;" id="home">
+    <section class="bg-half" style="background-image: url('{{ asset($intro[0]->icon_full_path) }}');object-fit: contain;" id="home">
         <div class="bg-overlay"></div>
         <div class="home-center">
             <div class="home-desc-center">
@@ -19,9 +19,9 @@
                                 <div class="row justify-content-center">
                                 <p class="text-black landing-3 col-lg-6 col-md-6 col-sm-12">
                                     @if (App::getLocale() == 'en')
-                                        {{ $intro->first()->intro_en}}
+                                        {{ $intro[0]->intro_en}}
                                     @else
-                                        {{ $intro->first()->intro_ar}}
+                                        {{ $intro[0]->intro_ar}}
                                     @endif
                                 </p>
                                     
@@ -111,7 +111,9 @@
                     <div class="title-heading">
                         <h2 class="text-uppercase text-center text-white word-keep dot-white">{{ __('content.investmentSectors')}}</h2>
                         <div class="row justify-content-center">
-                        <p class="mx-auto my-4 text-center text-white col-lg-6 col-md-6 col-sm-12">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, voluptates?</p>
+                        <p class="mx-auto my-4 text-center text-white col-lg-6 col-md-6 col-sm-12">
+                       
+                            </p>
 
                         </div>
                         <div class="container">
@@ -124,7 +126,7 @@
                                             <div class="feature">
                                                 <div class="fe-icon row ">
                                                     <!-- <i class="fas fa-seedling"></i> -->
-                                                    <img src="images/blog/blog-10.jpg" alt="" srcset="">
+                                                    <img src="{{asset($item->icon_full_path)}}" alt="" srcset="">
                                                     <h3 class="word-keep">{{ $item->sector_name_en}}</h3>
                                                 </div>
                                                 <div class="fe-head">
@@ -141,7 +143,7 @@
                                             <div class="feature">
                                                 <div class="fe-icon row ">
                                                     <!-- <i class="fas fa-seedling"></i> -->
-                                                    <img src="images/blog/blog-10.jpg" alt="" srcset="">
+                                                    <img src="{{asset($item->icon_full_path)}}" alt="" srcset="">
                                                     <h3 class="word-keep">{{ $item->sector_name_ar}}</h3>
                                                 </div>
                                                 <div class="fe-head">
@@ -195,13 +197,17 @@
                 <h2 class="text-uppercase word-keep dot">{{ __('content.ourNetwork')}}</h2>
                 <p class="mx-auto text-center my-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, voluptates?</p>
                 <div class="container">
+               
                     <div class="row justify-content-center">
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        
                             <div class=" network">
                                 <!-- <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"> -->
-                                    <img src="images/about/about-page.jpg" class="img-responsive img-network" alt="" srcset="">
+                               
+                                    <img src="{{asset($our_network[0]->logo_full_path) }}" class="img-responsive img-network" alt="" srcset="">
+                                    
                                     <!-- <h4 class="text-uppercase mt-2">cat</h4> -->
-
+                               
                                 <!-- </div> -->
                                 <!-- <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                     <div class="head-network">
@@ -213,6 +219,7 @@
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-6 ">
                             <div class=" network">
+                            
                                 <!-- <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"> -->
                                     <img src="images/about/about-page.jpg" class="img-responsive img-network" alt="" srcset="">
                                 <!-- </div> -->
@@ -224,6 +231,7 @@
                                 </div> -->
                             </div>
                         </div>
+                        
                         <div class="col-lg-4 col-md-4 col-sm-6 ">
                             <div class=" network">
                                 <!-- <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"> -->
