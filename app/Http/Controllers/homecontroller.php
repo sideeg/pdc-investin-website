@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Collection;
 
 use App\intro;
 use App\about_us;
@@ -30,9 +31,9 @@ class homeController extends Controller
         $blog =json_encode( blog::select('id','blog_name_en','blog_name_ar', 'Brief_en','Brief_ar',"created_at","image")->take(3)->get());
         $our_network = json_encode(our_network::all());
         $sector = json_encode(sector::select('id','sector_name_en','sector_name_ar', 'Brief_en','Brief_ar','icon')->get());
-        $about_us = json_encode(about_us::all());
+        $about_us = about_us::all();
         $intro = intro::all();
-        dd($intro);
+        // dd($intro);
         return view('index')->with('intro',$intro )->with('about_us',$about_us )
         ->with('sector',$sector )->with('our_network',$our_network )->with('blog',$blog )
         ->with('success_stories',$success_stories );

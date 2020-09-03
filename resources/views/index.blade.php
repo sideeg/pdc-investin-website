@@ -4,7 +4,7 @@
 
 
     <!-- HOME START-->
-    <section class="bg-half" style="background-image: url('{{ $intro->icon_full_path }}');object-fit: contain;" id="home">
+    <section class="bg-half" style="background-image: url('images/{{ asset($intro->first()->icon) }}');object-fit: contain;" id="home">
         <div class="bg-overlay"></div>
         <div class="home-center">
             <div class="home-desc-center">
@@ -19,9 +19,9 @@
                                 <div class="row justify-content-center">
                                 <p class="text-black landing-3 col-lg-6 col-md-6 col-sm-12">
                                     @if (App::getLocale() == 'en')
-                                        {{ $intro->intro_en}}
+                                        {{ $intro->first()->intro_en}}
                                     @else
-                                        {{ $intro->intro_ar}}
+                                        {{ $intro->first()->intro_ar}}
                                     @endif
                                 </p>
                                     
@@ -51,9 +51,9 @@
                         <div class="row justify-content-center">
                         <p class="mx-auto my-3 text-center col-lg-6 col-md-6 col-sm-12">
                             @if (App::getLocale() == 'en')
-                                {{ $about_us->intro_en}}
+                                {{ $about_us->first()->intro_en}}
                             @else
-                                {{ $about_us->intro_ar}}
+                                {{ $about_us->first()->intro_ar}}
                             @endif
                         </p>
 
@@ -90,9 +90,9 @@
                             </div>
                             <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12">
                                 @if (App::getLocale() == 'en')
-                                    {{ $about_us->text_en[0] }}
+                                    {{ $about_us->first()->text_en }}
                                 @else
-                                    {{ $about_us->text_ar[0] }}
+                                    {{ $about_us->first()->text_ar }}
                                 @endif
                             </div>
                         </div>
