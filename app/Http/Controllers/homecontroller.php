@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 use App\intro;
 use App\about_us;
 use App\sector;
@@ -12,7 +14,7 @@ use App\success_stories;
 
 
 
-class homecontroller extends Controller
+class homeController extends Controller
 {
      /**
      * Show the profile for the given user.
@@ -22,7 +24,7 @@ class homecontroller extends Controller
      */
     public function index()
     {
-        return view('index');
+        // return view('index');
         // dd(json_encode( success_stories::select('icon','name_en','name_ar', 'text_en','text_ar',"created_at")->get()));
         $success_stories = json_encode(success_stories::select('icon','name_en','name_ar','text_ar', 'text_en','text_ar',"created_at")->get());
         $blog =json_encode( blog::select('id','blog_name_en','blog_name_ar', 'Brief_en','Brief_ar',"created_at","image")->take(3)->get());
@@ -30,7 +32,7 @@ class homecontroller extends Controller
         $sector = json_encode(sector::select('id','sector_name_en','sector_name_ar', 'Brief_en','Brief_ar','icon')->get());
         $about_us = json_encode(about_us::all());
         $intro = intro::all();
-        
+        dd($intro);
         return view('index')->with('intro',$intro )->with('about_us',$about_us )
         ->with('sector',$sector )->with('our_network',$our_network )->with('blog',$blog )
         ->with('success_stories',$success_stories );

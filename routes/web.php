@@ -26,7 +26,9 @@ Route::get('locale/{locale}', function ($locale){
 Route::get("/","homeController@index");
 Route::get("/blogs","blogController@index");
 Route::get("/blogs/{id}","blogController@blogById");
-Route::get("/sectors/{id}","sectorController@show");
+Route::get("/sectors/{id}","sectorController@index");
+Route::get("/sectors/{id}/order","sectorController@showForm");
+
 
 
 

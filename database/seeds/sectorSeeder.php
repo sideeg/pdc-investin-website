@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class sectorSeeder extends Seeder
 {
@@ -22,10 +24,10 @@ class sectorSeeder extends Seeder
             'intro_ar' => Str::random(15),
 
 
-            'icon'=> "bg-cta-img",
-            'image1'=> "download",
-            'image2'=> "fav-ico",
-            'image3'=> "InvestIN-02",
+            'icon'=> "bg-cta-img.jpg",
+            'image1'=> "download.jpg",
+            'image2'=> "fav-ico.png",
+            'image3'=> "InvestIN-02.png",
 
         ]);
     }

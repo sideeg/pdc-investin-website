@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\sector;
 use App\session;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class sectorController extends Controller
 {
@@ -13,6 +15,8 @@ class sectorController extends Controller
      */
     public function index($id)
     {
+        return view('pages.sector');
+
         $sector = json_encode(sector::where('id',$id)->select('id','sector_name', 'Brief',"text","image1","image2","image3"
         ,"icon")->get());
 
@@ -21,6 +25,18 @@ class sectorController extends Controller
        
         
         return view('welcome')->with('sector',$sector )->with('session',$session );//TODO page_name
+    }
+    
+    /****
+     * *
+     * 
+     * 
+     */
+    public function showForm()
+    {
+        return view('pages.order');
+
+        # code...
     }
 
     /****

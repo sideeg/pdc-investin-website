@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
+
 
 class SuccessStoriesSeeder extends Seeder
 {
@@ -14,7 +17,7 @@ class SuccessStoriesSeeder extends Seeder
         DB::table('success_stories')->insert([
 
             [
-                'icon' => 'Investin-logo',
+                'icon' => 'Investin-logo.png',
                 'intro_en' => Str::random(15),
                 'intro_ar' => Str::random(20),
                 'name_en' => Str::random(20),
@@ -28,7 +31,7 @@ class SuccessStoriesSeeder extends Seeder
                 'updated_at' => date('Y-m-d H:i:s'),
             ],
             [
-                'icon' => 'Investin-logo',
+                'icon' => 'Investin-logo.png',
                 'intro_en' => Str::random(15),
                 'intro_ar' => Str::random(20),
                 'name_en' => Str::random(20),
@@ -42,7 +45,7 @@ class SuccessStoriesSeeder extends Seeder
                 'updated_at' => date('Y-m-d H:i:s'),
             ],
             [
-                'icon' => 'Investin-logo',
+                'icon' => 'Investin-logo.png',
                 'intro_en' => Str::random(15),
                 'intro_ar' => Str::random(20),
                 'name_en' => Str::random(20),

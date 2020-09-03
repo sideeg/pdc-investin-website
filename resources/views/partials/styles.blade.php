@@ -51,4 +51,7 @@
         padding: 7px 5px 5px 5px; 
         margin-top: 5px;
     }
+    .form-control, .form-control:focus {
+        background: #00B489;
+    }
 </style>
