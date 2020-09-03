@@ -17,7 +17,7 @@ class CreateSectorTable extends Migration
             $table->id();
             $table->string('sector_name');
             $table->string('icon');
-            $table->string('text');
+            $table->text('text');
             $table->string('image1');
             $table->string('image2');
             $table->string('image3');

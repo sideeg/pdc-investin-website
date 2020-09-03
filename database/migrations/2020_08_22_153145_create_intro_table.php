@@ -17,7 +17,7 @@ class CreateIntroTable extends Migration
             $table->id();
             $table->string('section_name');
             $table->string('icon')->nullable();
-            $table->string('text');
+            $table->text('text');
             $table->timestamps();
         });
     }

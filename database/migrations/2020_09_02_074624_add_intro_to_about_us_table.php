@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddArabicToSuccessStoriesTable extends Migration
+class AddIntroToAboutUsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class AddArabicToSuccessStoriesTable extends Migration
      */
     public function up()
     {
-        Schema::table('success_stories', function (Blueprint $table) {
-            $table->renameColumn('text',"text_en");
-            $table->renameColumn('name',"name_en");
-            $table->text('text_ar');
-            $table->string('name_ar');
+        Schema::table('about_us', function (Blueprint $table) {
+            $table->text('intro_ar');
+            $table->text('intro_en');
         });
     }
 
@@ -28,7 +26,7 @@ class AddArabicToSuccessStoriesTable extends Migration
      */
     public function down()
     {
-        Schema::table('success_stories', function (Blueprint $table) {
+        Schema::table('about_us', function (Blueprint $table) {
             //
         });
     }

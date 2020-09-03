@@ -17,8 +17,8 @@ class AddArabicToBlogTable extends Migration
             $table->renameColumn('text',"text_en");
             $table->renameColumn('Brief',"Brief_en");
             $table->renameColumn('blog_name',"blog_name_en");
-            $table->string('text_ar');
-            $table->string('Brief_ar');
+            $table->text('text_ar');
+            $table->text('Brief_ar');
             $table->string('blog_name_ar');
 
         });

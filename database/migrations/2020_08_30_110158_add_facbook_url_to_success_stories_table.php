@@ -14,7 +14,7 @@ class AddFacbookUrlToSuccessStoriesTable extends Migration
     public function up()
     {
         Schema::table('success_stories', function (Blueprint $table) {
-            $table->string('facbook_url');
+            $table->text('facbook_url');
         });
     }
 

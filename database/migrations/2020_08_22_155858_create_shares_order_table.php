@@ -17,7 +17,7 @@ class CreateSharesOrderTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('address');
-            $table->string('session_id');
+            $table->bigInteger('session_id');
             $table->string('phone_number');
             $table->timestamps();
         });

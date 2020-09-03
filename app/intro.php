@@ -19,7 +19,7 @@ class intro extends Model
     
     protected $fillable = [
 
-        'section_name_en','section_name_ar', 'icon', 'text_en','text_ar'
+        'section_name_en','section_name_ar', 'icon', 'intro_en','intro_ar'
     ];
 
 

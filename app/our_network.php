@@ -15,7 +15,7 @@ class our_network extends Model
     
     protected $fillable = [
 
-         'logo'
+         'logo','intro_en','intro_ar'
     ];
 
 

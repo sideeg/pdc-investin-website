@@ -15,9 +15,9 @@ class CreateSharesTable extends Migration
     {
         Schema::create('shares', function (Blueprint $table) {
             $table->id();
-            $table->string('customer_id');
-            $table->string('shares_num');
-            $table->string('session_id');
+            $table->bigInteger('customer_id');
+            $table->bigInteger('shares_num');
+            $table->bigInteger('session_id');
             $table->timestamps();
         });
     }

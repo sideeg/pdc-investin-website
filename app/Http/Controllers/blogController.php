@@ -23,8 +23,10 @@ class blogController extends Controller
 
     public function blogById( $id)
     {
-        return view('pages.article');
+        // return view('pages.article');
 
-        dd(json_encode( blog::find($id)));
+        // dd(json_encode( blog::find($id)));
+
+        return view("pages.article")->with("blog",blog::find($id));
     }
 }

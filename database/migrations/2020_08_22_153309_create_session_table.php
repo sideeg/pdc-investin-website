@@ -21,7 +21,7 @@ class CreateSessionTable extends Migration
             
             $table->bigInteger('total_num_of_shares');
             $table->bigInteger('num_of_taken_share');
-            $table->string('sector_id');
+            $table->bigInteger('sector_id');
             
             $table->timestamps();
         });
