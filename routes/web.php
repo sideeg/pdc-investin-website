@@ -28,7 +28,7 @@ Route::post("/contact","homeController@message")->name('contact');
 Route::get("/blog","blogController@index")->name('blog');
 Route::get("/article/{id}","blogController@blogById")->name('article');
 Route::get("/sector/{id}","sectorController@index");
-Route::get("/sector/{id}/order","sectorController@showForm");
+Route::get("/sector/{id}/order","sectorController@showForm")->name('order');
 
 
 

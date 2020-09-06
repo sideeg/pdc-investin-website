@@ -134,8 +134,61 @@
                     </p>
                 </div>
             </div>
+            @php
+                $count = 0; 
+            @endphp
             @forelse ($session as $item)
-                
+                @php
+                    $count +=1 ; 
+                @endphp
+                @if ($count%2 == 0)
+                    <div class="row bg-white align-items-center mx-0">
+                @else
+                    <div class="row bg-grey align-items-center mx-0">
+                @endif
+
+                    <div class="text-center my-4 col-lg-3 col-md-3">
+                        <div class="skills chart" data-percent="{{$item->TakenSharesPresent}}">
+                        <div class="pie-chart-value">{{ $item->TakenSharesPresent}}%</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-5">
+                        <div class="sector-shares">
+                            <h3 class="text-green text-uppercase">{{$item->session_name_en}}</h3>
+                            <p class="text-capitalize"><span>{{ __('content.numberOfShares')}}</span> <span class="text-green mx-2">{{ $item->total_num_of_shares}}</span></p>
+                            <p class="text-capitalize"><span>{{ __('content.remainingShare')}}</span> <span class="text-warning mx-2">{{$item->num_of_taken_share}}</span></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 my-3 d-flex justify-content-center">
+                        <a href="#" data-toggle="modal" data-target="largeModal{{$item->id}}" class="btn-blog mx-3 py-2 px-4">{{ __('content.details')}}</a>
+                        <a href="{{route('order', $item->id)}}" class="btn-order mx-3 py-2 px-4">{{ __('content.order')}}</a>
+                    </div>
+
+                    <!-- MODAL -->
+                    <div>
+                        <div id="largeModal{{$item->id}}" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header row mx-0">
+                                        <h4 class="modal-title">Session Details</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        {{$item->detials_en}}
+                                    </div>
+                                    <div class="row mx-0 modal-footer">
+                                        <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button> -->
+                                        <button type="button" class="btn btn-custom" data-dismiss="modal">OK</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END MODAL -->
+
+
+
+                </div>
             @empty
                 
             @endforelse
@@ -270,7 +323,7 @@
         </div>
     </div>
 </div>
-
+<!-- END MODAL -->
 
 
 @endsection

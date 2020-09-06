@@ -17,12 +17,13 @@ class sectorController extends Controller
     {
         // return view('pages.sector');
 
-        $sector = json_decode(sector::where('id',$id)->select('id','icon',"image1","image2","image3", 'background_image',
+        $sector = json_decode( sector::where('id',$id)->select('id','icon',"image1","image2","image3", 'background_image',
         'sector_name_en','sector_name_ar', 'Brief_en','Brief_ar',"text_en","text_ar")->get());
 
-        $session = json_decode(session::all()->where('sector_id',$id));
+        $session =json_decode( session::where('sector_id', $id)->whereRaw("num_of_taken_share < total_num_of_shares")
+        ->select('*')->get());
 
-         dd($session);       
+        //  dd($session);       
         
         return view('pages.sector')->with('sector',$sector )->with('session',$session );//TODO page_name
     }
