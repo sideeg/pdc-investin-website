@@ -14,26 +14,29 @@ class OurNetworkSeeder extends Seeder
      */
     public function run()
     {
+        $faker_ar = Faker\Factory::create('ar_JO');
+        $faker_en = Faker\Factory::create('en_JO');
+        
         DB::table('our_network')->insert([
 
             [
                 'logo' => 'Investin-logo.png',
-                'intro_en' => Str::random(15),
-                'intro_ar' => Str::random(20),
+                'intro_en' => $faker_en->realText(),
+                'intro_ar' => $faker_ar->realText(30),
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             ],
             [
                 'logo' => 'blog/blog-2.jpg',
-                'intro_en' => Str::random(15),
-                'intro_ar' => Str::random(20),
+                'intro_en' => $faker_en->realText(),
+                'intro_ar' => $faker_ar->realText(),
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             ],
             [
                 'logo' => 'blog/blog-1.jpg',
-                'intro_en' => Str::random(15),
-                'intro_ar' => Str::random(20),
+                'intro_en' => $faker_en->realText(),
+                'intro_ar' => $faker_ar->realText(),
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             ]
