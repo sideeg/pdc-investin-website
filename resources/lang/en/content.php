@@ -59,6 +59,7 @@ return [
     'phone' => 'Phone',
     'phoneNumber' => 'Phone Number',
     'address' => 'Address',
+    'subject' => 'Subject',
 
 
 ];

@@ -42,7 +42,7 @@
                                             <a href="{{route('article', $item->id)}}" class="btn-blog">{{ __('content.readFull')}}</a>
                                         </div>
                                         <div class="col-lg-2">
-                                            <h5 class="my-3 text-green2 text-center blog-date"> <span class="d-block day">5</span> <span  class="d-block month">Novmber</span> <span class="d-block year">2020</span></h5>
+                                            <h5 class="my-3 text-green2 text-center blog-date"> <span class="d-block day">{{\Carbon\Carbon::parse($item->created_at)->format('H') }}</span> <span  class="d-block month">Novmber</span> <span class="d-block year">2020</span></h5>
                                         </div>
                                     </div>
                                 </div>
@@ -70,7 +70,7 @@
                                             <a href="{{route('article', $item->id)}}" class="btn-blog">{{ __('content.readFull')}}</a>
                                         </div>
                                         <div class="col-lg-2">
-                                            <h5 class="my-3 text-green2 text-center blog-date"> <span class="d-block day">5</span> <span  class="d-block month">Novmber</span> <span class="d-block year">2020</span></h5>
+                                            <h5 class="my-3 text-green2 text-center blog-date"> <span class="d-block day">{{\Carbon\Carbon::parse($item->created_at)->format('H') }}</span> <span  class="d-block month">{{\Carbon\Carbon::parse($item->created_at)->format('F') }}</span> <span class="d-block year">{{\Carbon\Carbon::parse($item->created_at)->format('yy') }}</span></h5>
                                         </div>
                                     </div>
                                 </div>

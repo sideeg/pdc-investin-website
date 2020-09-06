@@ -121,7 +121,7 @@
 
                         </div>
                         <div class="container">
-                            <div class="row">
+                            <div class="row justify-content-center">
                                 
 
                                 @if (App::getLocale() == 'en')
@@ -185,6 +185,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -209,16 +210,15 @@
                 <div class="container">
                
                     <div class="row justify-content-center">
+                        @forelse ($our_network as $item)
                         <div class="col-md-4 col-sm-6">
-                        
-                            @forelse ($our_network as $item)
-                                <div class=" network">
-                                    <img src="{{asset($item->logo_full_path) }}" class="img-responsive img-network" alt="" srcset="">
-                                </div>
-                            @empty
-                                
-                            @endforelse
+                            <div class="network">
+                                <img src="{{asset($item->logo_full_path) }}" class="img-responsive img-network" alt="" srcset="">
+                            </div>
                         </div>
+                        @empty
+                                
+                        @endforelse
                         
                         {{-- <div class="col-lg-4 col-md-4 col-sm-6 ">
                             <div class=" network">
@@ -326,7 +326,7 @@
                                                     <p class="text-left mx-4 mt-2">
                                                         {{ $item->Brief_en}}
                                                     </p>
-                                                <p class="text-muted text-small text-left mx-4 pb-4 d-block row"><i class="mdi mdi-calendar text-black mx-1"></i> <span class=""> {{ $item->created_at}}</span></p>
+                                                <p class="text-muted text-small text-left mx-4 pb-4 row"><i class="mdi mdi-calendar text-black mx-1"></i> <span class=""> {{\Carbon\Carbon::parse($item->created_at)->format('d M, yy') }}</span></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -344,7 +344,7 @@
                                                     <p class="text-left mx-4 mt-2">
                                                         {{ $item->Brief_ar}}
                                                     </p>
-                                                <p class="text-muted text-small text-left mx-4 pb-4 d-block row"><i class="mdi mdi-calendar text-black mx-1"></i> <span class=""> {{ $item->created_at}}</span></p>
+                                                <p class="text-muted text-small text-left mx-4 pb-4 row"><i class="mdi mdi-calendar text-black mx-1"></i> <span class=""> {{\Carbon\Carbon::parse($item->created_at)->format('yy, M d') }}</span></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -564,7 +564,7 @@
 
                         <div class="container mt-5">
                             <div class="row justify-content-space">
-                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                <div class="col-lg-4 col-md-6 col-sm-12">
                                     <form action="{{ route('contact')}}" method="POST" class="p-4 bg-green custom-form">
                                         @csrf
                                         <div class="">
@@ -595,17 +595,17 @@
                                     </form>
                                 
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-12 my-2">
+                                <div class="col-lg-4 col-md-6 col-sm-12 my-2">
                                     <div class="map video-app-box mt-30">
                                         <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d6030.418742494061!2d-111.34563870463673!3d26.01036670629853!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2smx!4v1471908546569" style="border: 1px solid #fff;width:100%;height:20rem" allowfullscreen></iframe>
                                     </div>
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ea corporis aut explicabo fugit aperiam qui commodi, atque tempore dolorem molestiae, necessitatibus perferendis totam? Architecto molestiae, impedit vel nam recusandae distinctio illo. Culpa cupiditate dolor eaque nemo, neque quas explicabo!
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                <div class="col-lg-4 col-md-12 col-sm-12">
                                     <div class="contact-info">
-                                        <div class="contact-row m-2 row"><span class="icon m-2"><i class="fas fa-at m-3"></i></span><span>INVOICE@GMAIL.COM</span></div>
-                                        <div class="contact-row m-2 row"><span class="icon m-2"><i class="fas fa-at m-3"></i></span><span>+123456789</span><span>+123456789</span></div>
-                                        <div class="contact-row m-2 row"><span class="icon m-2"><i class="fas fa-map-marker-alt m-3"></i></span><span>SUDAN, KHARTOUM KH STREET BUILDING 22</span></div>
+                                        <div class="contact-row row"><span class="icon col-lg-3 col-sm-12"><i class="fas fa-at m-3"></i></span><span class="info-text col-lg-9 col-sm-12">INVOICE@GMAIL.COM</span></div>
+                                        <div class="contact-row row"><span class="icon col-lg-3 col-sm-12"><i class="fas fa-at m-3"></i></span><span class="info-text col-lg-9 col-sm-12">+123456789</span></div>
+                                        <div class="contact-row row"><span class="icon col-lg-3 col-sm-12"><i class="fas fa-map-marker-alt m-3"></i></span><span class="info-text col-lg-9 col-sm-12">SUDAN, KHARTOUM KH STREET BUILDING 22</span></div>
 
                                     </div>
                                 </div>
