@@ -17,7 +17,13 @@
                                 {{-- <i class="fas fa-seedling d-block"></i> --}}
                                 <img src="{{ asset($sector[0]->icon_full_path) }}" class="mb-2" alt="missing_logo" width="400">
                             </div>
-                            <h1 class="text-black word-keep text-uppercase">Agriculture Sector</h1>
+                            <h1 class="text-black word-keep text-uppercase">
+                                @if (App::getLocale() == 'en')
+                                    {{ $sector[0]->sector_name_en}}
+                                @else
+                                    {{ $sector[0]->sector_name_ar}}
+                                @endif
+                            </h1>
                         </div>
                     </div>
                 </div>

@@ -162,7 +162,7 @@
 
                     
                 </div>
-                <div class="row justify-content-center">
+                <div class="row justify-content-center my-3">
                     {{ $blog->links() }}    
                 </div>
             </div>
