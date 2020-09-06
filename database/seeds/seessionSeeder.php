@@ -20,6 +20,8 @@ class seessionSeeder extends Seeder
         $start = $faker_en->dateTimeBetween('next Monday', 'next Monday +7 days');
         $end = $faker_en->dateTimeBetween($start, $start->format('Y-m-d H:i:s').' +2 days');
         
+       
+
         for($i = 0; $i < 100; $i++) {
         DB::table('session')->insert([
             'session_name_ar' => $faker_ar->name,

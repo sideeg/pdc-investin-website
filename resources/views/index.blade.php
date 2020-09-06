@@ -14,17 +14,26 @@
                             <div class="title-heading text-center">
                                 <img src="images/Investin-logo.png" class="mb-2 home-logo" alt="missing_logo">
                                 <!-- <h1 class="text-green">INVESTIN</h1> -->
+                                @if (App::getLocale() == 'en')
 
-                                <h2 class="text-black text-uppercase word-keep">{{ __('content.investmentCompany')}}</h2>
+                                <h2 class="text-black text-uppercase word-keep">
+                                    {{ $intro[0]->section_name_ar}}
+                                </h2>
                                 <div class="row justify-content-center">
                                 <p class="text-black landing-3 col-lg-6 col-md-6 col-sm-12">
-                                    @if (App::getLocale() == 'en')
                                         {{ $intro[0]->intro_en}}
-                                    @else
-                                        {{ $intro[0]->intro_ar}}
-                                    @endif
                                 </p>
-                                    
+                                @else
+
+                                <h2 class="text-black text-uppercase word-keep">
+                                    {{ $intro[0]->section_name_ar}}
+                                </h2>
+                                <div class="row justify-content-center">
+                                <p class="text-black landing-3 col-lg-6 col-md-6 col-sm-12">
+                                    {{ $intro[0]->intro_ar}}
+                                </p>
+                                @endif
+                                
                                 </div>
                                 <!-- <div class="text-center subcribe-form mt-5">
                                     <form action="#">
@@ -200,13 +209,15 @@
         <div class="container">
             <div class="title-heading text-center">
                 <h2 class="text-uppercase word-keep dot">{{ __('content.ourNetwork')}}</h2>
-                <p class="mx-auto text-center my-5">
-                    @if (App::getLocale() == 'en')
-                        {{ $our_network[0]->intro_en}}        
-                    @else
-                        {{ $our_network[0]->intro_ar}}    
-                    @endif
-                </p>
+                <div class="row justify-content-center">
+                    <p class="mx-auto my-4 text-center col-lg-6 col-md-6 col-sm-12">
+                        @if (App::getLocale() == 'en')
+                            {{ $our_network[0]->intro_en}}        
+                        @else
+                            {{ $our_network[0]->intro_ar}}    
+                        @endif
+                    </p>
+                </div>
                 <div class="container">
                
                     <div class="row justify-content-center">
@@ -303,13 +314,16 @@
                 <div class="col-md-12">
                     <div class="title-heading text-center">
                         <h2 class="text-uppercase text-white word-keep dot-white">{{ __('content.blog')}}</h2>
-                        <p class="mx-auto my-5 text-white">
-                            @if (App::getLocale() == 'en')
-                                {{ $blog->first()->intro_en}}        
-                            @else
-                                {{ $blog->first()->intro_ar}}    
-                            @endif
-                        </p>
+                        <div class="row justify-content-center">
+                            <p class="mx-auto my-4 text-center text-white col-lg-6 col-md-6 col-sm-12">
+                            
+                                @if (App::getLocale() == 'en')
+                                    {{ $blog->first()->intro_en}}        
+                                @else
+                                    {{ $blog->first()->intro_ar}}    
+                                @endif
+                            </p>
+                        </div>
                         <div class="container">
                             <div class="row blog align-items-start">
                                 
@@ -439,7 +453,7 @@
                                                 <div class="row w-100">
                                                     <div class="col-3">
                                                         <!-- <a href="https://fontawesome.com/icons?d=gallery&q=arrow&m=free" target="_blank"> -->
-                                                        <img src="images/about/about-page.jpg" class="success-avatar my-2" alt="" srcset="">
+                                                        <img src="{{asset($item->icon_full_path) }}" class="success-avatar my-2" alt="" srcset="">
                                                         <!-- </a> -->
                                                     </div>
                                                     <div class="col-9 success-name">
