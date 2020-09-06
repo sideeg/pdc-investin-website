@@ -14,18 +14,21 @@ class SuccessStoriesSeeder extends Seeder
      */
     public function run()
     {
+        $faker_ar = Faker\Factory::create('ar_JO');
+        $faker_en = Faker\Factory::create('en_JO');
+
         DB::table('success_stories')->insert([
 
             [
                 'icon' => 'Investin-logo.png',
                 'intro_en' => Str::random(15),
                 'intro_ar' => Str::random(20),
-                'name_en' => Str::random(20),
-                'name_ar' => Str::random(20),
+                'name_en' => $faker_en->name,
+                'name_ar' =>  $faker_ar->name,
                 'facbook_url' => Str::random(30),
             
-                'text_en' => Str::random(30),
-                'text_ar' => Str::random(25),
+                'text_en' => $faker_en->realText(),
+                'text_ar' => $faker_ar->realText(),
 
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
@@ -34,12 +37,12 @@ class SuccessStoriesSeeder extends Seeder
                 'icon' => 'Investin-logo.png',
                 'intro_en' => Str::random(15),
                 'intro_ar' => Str::random(20),
-                'name_en' => Str::random(20),
-                'name_ar' => Str::random(20),
+                'name_en' => $faker_en->name,
+                'name_ar' => $faker_ar->name,
                 'facbook_url' => Str::random(30),
             
-                'text_en' => Str::random(30),
-                'text_ar' => Str::random(25),
+                'text_en' => $faker_en->realText(),
+                'text_ar' => $faker_ar->realText(),
 
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
@@ -48,13 +51,13 @@ class SuccessStoriesSeeder extends Seeder
                 'icon' => 'Investin-logo.png',
                 'intro_en' => Str::random(15),
                 'intro_ar' => Str::random(20),
-                'name_en' => Str::random(20),
-                'name_ar' => Str::random(20),
+                'name_en' => $faker_en->name,
+                'name_ar' => $faker_ar->name,
                 'facbook_url' => Str::random(30),
             
-                'text_en' => Str::random(30),
-                'text_ar' => Str::random(25),
-
+                'text_en' => $faker_en->realText(),
+                'text_ar' => $faker_ar->realText(),
+            
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             ]
