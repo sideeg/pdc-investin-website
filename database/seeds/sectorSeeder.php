@@ -28,6 +28,8 @@ class sectorSeeder extends Seeder
             'image1'=> "download.jpg",
             'image2'=> "fav-ico.png",
             'image3'=> "InvestIN-02.png",
+            'background_image'=> "InvestIN-02.png",
+
 
         ]);
     }

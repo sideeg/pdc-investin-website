@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use \Faker\Factory;
 
 
 class BlogSeeder extends Seeder
@@ -15,9 +16,11 @@ class BlogSeeder extends Seeder
     public function run()
     {
         for($i = 0; $i < 100; $i++) {
+            Factory::create()->unique()->words(14);
         DB::table('blog')->insert([
 
             [
+               
                 'image' => 'Investin-logo.png',
                 'intro_en' => Str::random(15),
                 'intro_ar' => Str::random(20),
