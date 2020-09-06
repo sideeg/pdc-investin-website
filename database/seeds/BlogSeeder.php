@@ -20,7 +20,6 @@ class BlogSeeder extends Seeder
         $faker_en = Faker\Factory::create('en_JO');
 
         for($i = 0; $i < 100; $i++) {
-            Factory::create()->unique()->words(14);
            
 
         DB::table('blog')->insert([

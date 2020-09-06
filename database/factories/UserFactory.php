@@ -34,3 +34,28 @@ $factory->define(App\User::class, function (Faker $faker) {
         'blog_name_en' => $username,
     ];
     });
+
+    $factory->define(App\session::class, function (Faker $faker) {
+    
+        $faker_ar = Faker\Factory::create('ar_JO');
+        $faker_en = Faker\Factory::create('en_JO');
+
+        $sectiors = App\sector::pluck('id')->toArray();
+        
+        $start = $faker->dateTimeBetween('next Monday', 'next Monday +7 days');
+        $end = $faker->dateTimeBetween($start, $start->format('Y-m-d H:i:s').' +2 days');
+        return [
+            'session_name_ar' => $faker_ar->name,
+            'session_name_en' => $faker_en->name,
+            'start_date' => $start,
+            'detials_ar' => $faker_ar->realText(),
+            'detials_en' => $faker_en->realText(),
+            'end_date' => $end,
+            'total_num_of_shares' => $faker->numberBetween($min = 100, $max = 9000),
+            'num_of_taken_share' => $faker->numberBetween($min = 1, $max = 9000),
+            'sector_id' => $faker->randomElement($sectiors),
+
+
+
+        ];
+        });
