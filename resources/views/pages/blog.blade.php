@@ -28,7 +28,7 @@
                                 <div class="col-lg-10 col-md-7 col-sm-12 col-xs-12 my-3">
                                     <div class="row mx-0 article">
                                         <div class="col-lg-4 blog-img px-0">
-                                            <img src="images/about/about-page.jpg" class="img-responsive img-blog-side " alt="">
+                                            <img src="{{asset($item->image_full_path) }}" class="img-responsive img-blog-side " alt="">
                                             <div class="blog-overlay"></div>
                                             
                                         </div>
@@ -56,7 +56,7 @@
                                 <div class="col-lg-10 col-md-7 col-sm-12 col-xs-12 my-3">
                                     <div class="row mx-0 article">
                                         <div class="col-lg-4 blog-img px-0">
-                                            <img src="images/about/about-page.jpg" class="img-responsive img-blog-side " alt="">
+                                            <img src="{{asset($item->image_full_path) }}" class="img-responsive img-blog-side " alt="">
                                             <div class="blog-overlay"></div>
                                             
                                         </div>

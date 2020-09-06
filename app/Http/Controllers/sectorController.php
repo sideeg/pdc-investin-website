@@ -15,16 +15,16 @@ class sectorController extends Controller
      */
     public function index($id)
     {
-        return view('pages.sector');
+        // return view('pages.sector');
 
-        $sector = json_encode(sector::where('id',$id)->select('id','sector_name', 'Brief',"text","image1","image2","image3"
+        $sector = json_decode(sector::where('id',$id)->select('id','sector_name_en','sector_name_ar', 'Brief_en','Brief_ar',"text_en","text_ar","image1","image2","image3"
         ,"icon")->get());
 
-        $session = json_encode(session::all()->where('sector_id',$id));
-        dd($session);
+        $session = json_decode(session::all()->where('sector_id',$id));
+        // dd($sector);
        
         
-        return view('welcome')->with('sector',$sector )->with('session',$session );//TODO page_name
+        return view('pages.sector')->with('sector',$sector )->with('session',$session );//TODO page_name
     }
     
     /****

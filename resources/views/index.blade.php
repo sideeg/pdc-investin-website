@@ -4,7 +4,7 @@
 
 
     <!-- HOME START-->
-    <section class="bg-half" style="background-image: url('images/{{ asset($intro->first()->icon) }}');object-fit: contain;" id="home">
+    <section class="bg-half" style="background-image: url('{{ asset($intro[0]->icon_full_path) }}');object-fit: contain;" id="home">
         <div class="bg-overlay"></div>
         <div class="home-center">
             <div class="home-desc-center">
@@ -19,9 +19,9 @@
                                 <div class="row justify-content-center">
                                 <p class="text-black landing-3 col-lg-6 col-md-6 col-sm-12">
                                     @if (App::getLocale() == 'en')
-                                        {{ $intro->first()->intro_en}}
+                                        {{ $intro[0]->intro_en}}
                                     @else
-                                        {{ $intro->first()->intro_ar}}
+                                        {{ $intro[0]->intro_ar}}
                                     @endif
                                 </p>
                                     
@@ -113,9 +113,9 @@
                         <div class="row justify-content-center">
                         <p class="mx-auto my-4 text-center text-white col-lg-6 col-md-6 col-sm-12">
                             @if (App::getLocale() == 'en')
-                                {{ $sector->first()->intro_en}}        
+                                {{ $sector[0]->intro_en}}        
                             @else
-                                {{ $sector->first()->intro_ar}}    
+                                {{ $sector[0]->intro_ar}}    
                             @endif
                         </p>
 
@@ -130,7 +130,7 @@
                                             <div class="feature">
                                                 <div class="fe-icon row ">
                                                     <!-- <i class="fas fa-seedling"></i> -->
-                                                    <img src="images/blog/blog-10.jpg" alt="" srcset="">
+                                                    <img src="{{asset($item->icon_full_path)}}" alt="" srcset="">
                                                     <h3 class="word-keep">{{ $item->sector_name_en}}</h3>
                                                 </div>
                                                 <div class="fe-head">
@@ -147,7 +147,7 @@
                                             <div class="feature">
                                                 <div class="fe-icon row ">
                                                     <!-- <i class="fas fa-seedling"></i> -->
-                                                    <img src="images/blog/blog-10.jpg" alt="" srcset="">
+                                                    <img src="{{asset($item->icon_full_path)}}" alt="" srcset="">
                                                     <h3 class="word-keep">{{ $item->sector_name_ar}}</h3>
                                                 </div>
                                                 <div class="fe-head">
@@ -201,30 +201,28 @@
                 <h2 class="text-uppercase word-keep dot">{{ __('content.ourNetwork')}}</h2>
                 <p class="mx-auto text-center my-5">
                     @if (App::getLocale() == 'en')
-                        {{ $our_network->first()->intro_en}}        
+                        {{ $our_network[0]->intro_en}}        
                     @else
-                        {{ $our_network->first()->intro_ar}}    
+                        {{ $our_network[0]->intro_ar}}    
                     @endif
                 </p>
                 <div class="container">
+               
                     <div class="row justify-content-center">
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                            <div class=" network">
-                                <!-- <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"> -->
-                                    <img src="images/about/about-page.jpg" class="img-responsive img-network" alt="" srcset="">
-                                    <!-- <h4 class="text-uppercase mt-2">cat</h4> -->
-
-                                <!-- </div> -->
-                                <!-- <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                    <div class="head-network">
-                                        <h3 class="text-uppercase">cat</h3>
-                                        <p>Lorem ipsum dolor sit.</p>
-                                    </div>
-                                </div> -->
-                            </div>
+                        <div class="col-md-4 col-sm-6">
+                        
+                            @forelse ($our_network as $item)
+                                <div class=" network">
+                                    <img src="{{asset($item->logo_full_path) }}" class="img-responsive img-network" alt="" srcset="">
+                                </div>
+                            @empty
+                                
+                            @endforelse
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 ">
+                        
+                        {{-- <div class="col-lg-4 col-md-4 col-sm-6 ">
                             <div class=" network">
+                            
                                 <!-- <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"> -->
                                     <img src="images/about/about-page.jpg" class="img-responsive img-network" alt="" srcset="">
                                 <!-- </div> -->
@@ -236,6 +234,7 @@
                                 </div> -->
                             </div>
                         </div>
+                        
                         <div class="col-lg-4 col-md-4 col-sm-6 ">
                             <div class=" network">
                                 <!-- <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"> -->
@@ -288,7 +287,7 @@
                                     </div>
                                 </div> -->
                             </div>
-                        </div>
+                        </div> --}}
                         
                     </div>
                 </div>
@@ -319,7 +318,7 @@
                                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                                             <div class="post-articles">
                                                 <div class="first-section">
-                                                    <img src="images/about/about-page.jpg" class="img-responsive img-blog-top" alt="" srcset="">
+                                                    <img src="{{asset($item->image_full_path) }}" class="img-responsive img-blog-top" alt="" srcset="">
                                                     <div class="first-section-overlay"></div>
                                                     <h4 class="blog-title text-white word-keep">{{ $item->blog_name_en}}</h4>
                                                 </div>
@@ -419,7 +418,7 @@
                                                 <div class="row w-100">
                                                     <div class="col-3">
                                                         <!-- <a href="https://fontawesome.com/icons?d=gallery&q=arrow&m=free" target="_blank"> -->
-                                                        <img src="images/about/about-page.jpg" class="success-avatar my-2" alt="" srcset="">
+                                                        <img src="{{asset($item->icon_full_path) }}" class="success-avatar my-2" alt="" srcset="">
                                                         <!-- </a> -->
                                                     </div>
                                                     <div class="col-9 success-name">
