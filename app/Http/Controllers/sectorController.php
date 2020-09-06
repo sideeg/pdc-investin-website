@@ -22,7 +22,7 @@ class sectorController extends Controller
 
         $session = json_decode(session::all()->where('sector_id',$id));
 
-        //  dd($session);       
+          dd($session);       
         
         return view('pages.sector')->with('sector',$sector )->with('session',$session );//TODO page_name
     }

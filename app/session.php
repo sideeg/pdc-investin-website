@@ -28,13 +28,15 @@ class session extends Model
 
     public function getRemainingsharesAttribute()
 	{
-        return  $this->total_num_of_shares - $this->num_of_taken_share;
+        return $this->total_num_of_shares <  $this->num_of_taken_share ?  "0"
+        :   $this->total_num_of_shares - $this->num_of_taken_share;
        
     }
 
     public function getTakenSharesPresentAttribute()
 	{
-        return  number_format(($this->num_of_taken_share / $this->total_num_of_shares)*100,2);
+        return $this->num_of_taken_share >= $this->total_num_of_shares ?  "100" :
+          number_format(($this->num_of_taken_share / $this->total_num_of_shares)*100,2);
     }
 
 
