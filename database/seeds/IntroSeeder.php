@@ -23,8 +23,8 @@ class IntroSeeder extends Seeder
                 
                 'intro_en' => $faker_en->realText(),
                 'intro_ar' => $faker_ar->realText(),
-                'section_name_en' => Str::random(20),
-                'section_name_ar' => Str::random(20),
+                'section_name_en' =>  $faker_en->name,
+                'section_name_ar' =>  $faker_ar->name,
                 
 
                 'created_at' => date('Y-m-d H:i:s'),

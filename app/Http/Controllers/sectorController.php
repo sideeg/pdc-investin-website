@@ -21,8 +21,8 @@ class sectorController extends Controller
         'sector_name_en','sector_name_ar', 'Brief_en','Brief_ar',"text_en","text_ar")->get());
 
         $session = json_decode(session::all()->where('sector_id',$id));
-         dd($session);
-       
+
+        //  dd($session);       
         
         return view('pages.sector')->with('sector',$sector )->with('session',$session );//TODO page_name
     }

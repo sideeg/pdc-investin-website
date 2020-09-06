@@ -4,7 +4,7 @@
 
 
 <!-- HOME START-->
-<section class="bg-half" style="background-image: url('{{ asset($sector[0]->icon_full_path) }}');" id="home">
+<section class="bg-half" style="background-image: url('{{ asset($sector[0]->background_image_full_path) }}');" id="home">
     <div class="bg-overlay"></div>
     <div class="home-center">
         <div class="home-desc-center">
@@ -14,9 +14,10 @@
                         <div class="title-heading text-center">
                             <!-- <img src="images/logo.png" class="mb-2" alt="missing_logo" width="400"> -->
                             <div class="icon-heading text-center">
-                                <i class="fas fa-seedling d-block"></i>
+                                {{-- <i class="fas fa-seedling d-block"></i> --}}
+                                <img src="{{ asset($sector[0]->icon_full_path) }}" class="mb-2" alt="missing_logo" width="400">
                             </div>
-                            <h1 class="text-white word-keep text-uppercase">Agriculture Sector</h1>
+                            <h1 class="text-black word-keep text-uppercase">Agriculture Sector</h1>
                         </div>
                     </div>
                 </div>
@@ -39,12 +40,13 @@
                             <ol class="carousel-indicators">
                                 <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
                                 <li data-target="#mycarousel" data-slide-to="1" ></li>
+                                <li data-target="#mycarousel" data-slide-to="1" ></li>
                             </ol>
             
                             <div class="carousel-inner" role="listbox">
                             <div class="carousel-item active">
             
-                                <div class="carousel-background img-carousel"><img src="{{ asset('images/about/about-pic.jpg') }}" alt=""></div>
+                                <div class="carousel-background img-carousel"><img src="{{ asset($sector[0]->image1_full_path) }}" alt=""></div>
                                 <div class="carousel-container">
                                 <div class="carousel-content">
                                     <!-- <h3 class="text-white">title</h3>
@@ -62,11 +64,29 @@
                             
                             <div class="carousel-item">
             
-                                <div class="carousel-background img-carousel"><img src="{{ asset('images/about/about-page.jpg') }}" alt=""></div>
+                                <div class="carousel-background img-carousel"><img src="{{ asset($sector[0]->image2_full_path) }}" alt=""></div>
                                 <div class="carousel-container">
                                 <div class="carousel-content">
                                     <!-- <h4 class="text-black">title</h4>
                                     <p class="text-black" style="color:black;">Discription</p> -->
+                                    <!-- {{-- <a href="#partners" class="btn-get-started scrollto">Get Started</a> --}} -->
+                                </div>
+                                </div>  
+                                <div class="carousel-container">
+                                    <div class="carousel-content">
+                                    <!-- <h2 class="scrollto"></h2> -->
+                                    <!-- <a href="#featured-services" class="btn-get-started scrollto"></a> -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+            
+                                <div class="carousel-background img-carousel"><img src="{{ asset($sector[0]->image3_full_path) }}" alt=""></div>
+                                <div class="carousel-container">
+                                <div class="carousel-content">
+                                    <!-- <h3 class="text-white">title</h3>
+                                    <p class="text-white" style="color:black;">discription</p> -->
                                     <!-- {{-- <a href="#partners" class="btn-get-started scrollto">Get Started</a> --}} -->
                                 </div>
                                 </div>  
@@ -100,8 +120,11 @@
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12  d-flex align-items-center">
                     <p class="text-center my-3">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores rerum laborum ullam impedit facilis! Dolorum est dolores enim expedita officiis eum esse, iusto delectus repudiandae sunt tempora ullam qui sit natus veniam omnis iure, suscipit earum quae. Nostrum, deleniti harum? Vel voluptates reprehenderit tenetur asperiores nam qui deserunt ab explicabo, quae facilis! Amet odio perferendis hic officiis aperiam, veritatis neque.
-
+                        @if (App::getLocale() == 'en')
+                            {{ $sector[0]->text_en}}
+                        @else
+                            {{ $sector[0]->text_ar}}
+                        @endif
                     </p>
                 </div>
             </div>
