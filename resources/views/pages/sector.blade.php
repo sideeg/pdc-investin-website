@@ -134,6 +134,11 @@
                     </p>
                 </div>
             </div>
+            @forelse ($session as $item)
+                
+            @empty
+                
+            @endforelse
             <div class="row bg-grey align-items-center mx-0">
                 <div class="text-center my-4 col-lg-3 col-md-3">
                     <div class="skills chart" data-percent="85">
