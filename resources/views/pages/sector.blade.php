@@ -4,7 +4,7 @@
 
 
 <!-- HOME START-->
-<section class="bg-half" style="background-image: url('{{ asset($sector[0]->icon_full_path) }}');" id="home">
+<section class="bg-half" style="background-image: url('{{ asset($sector[0]->background_image_full_path) }}');" id="home">
     <div class="bg-overlay"></div>
     <div class="home-center">
         <div class="home-desc-center">
@@ -39,12 +39,13 @@
                             <ol class="carousel-indicators">
                                 <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
                                 <li data-target="#mycarousel" data-slide-to="1" ></li>
+                                <li data-target="#mycarousel" data-slide-to="1" ></li>
                             </ol>
             
                             <div class="carousel-inner" role="listbox">
                             <div class="carousel-item active">
             
-                                <div class="carousel-background img-carousel"><img src="{{ asset('images/about/about-pic.jpg') }}" alt=""></div>
+                                <div class="carousel-background img-carousel"><img src="{{ asset($sector[0]->image1_full_path) }}" alt=""></div>
                                 <div class="carousel-container">
                                 <div class="carousel-content">
                                     <!-- <h3 class="text-white">title</h3>
@@ -62,11 +63,29 @@
                             
                             <div class="carousel-item">
             
-                                <div class="carousel-background img-carousel"><img src="{{ asset('images/about/about-page.jpg') }}" alt=""></div>
+                                <div class="carousel-background img-carousel"><img src="{{ asset($sector[0]->image2_full_path) }}" alt=""></div>
                                 <div class="carousel-container">
                                 <div class="carousel-content">
                                     <!-- <h4 class="text-black">title</h4>
                                     <p class="text-black" style="color:black;">Discription</p> -->
+                                    <!-- {{-- <a href="#partners" class="btn-get-started scrollto">Get Started</a> --}} -->
+                                </div>
+                                </div>  
+                                <div class="carousel-container">
+                                    <div class="carousel-content">
+                                    <!-- <h2 class="scrollto"></h2> -->
+                                    <!-- <a href="#featured-services" class="btn-get-started scrollto"></a> -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item active">
+            
+                                <div class="carousel-background img-carousel"><img src="{{ asset($sector[0]->image3_full_path) }}" alt=""></div>
+                                <div class="carousel-container">
+                                <div class="carousel-content">
+                                    <!-- <h3 class="text-white">title</h3>
+                                    <p class="text-white" style="color:black;">discription</p> -->
                                     <!-- {{-- <a href="#partners" class="btn-get-started scrollto">Get Started</a> --}} -->
                                 </div>
                                 </div>  
