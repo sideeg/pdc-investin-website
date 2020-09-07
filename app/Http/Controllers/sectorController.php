@@ -57,17 +57,17 @@ class sectorController extends Controller
 
 
      ]);
-     $session =json_decode( session::find($id)->get() );
+     $session =json_decode( session::find($id) );
      $new_session = session::find($id);
 
-     
-        // dd($session[0]->Remainingshares ."pppppppppppppppppppppppppppppp". $request->num_of_taken_share );
-     if($session[0]->Remainingshares < $request->num_of_taken_share){
+    
+        // dd($session->Remainingshares ."pppppppppppppppppppppppppppppp". $request->num_of_taken_share );
+     if($session->Remainingshares < $request->num_of_taken_share){
          $error = true;
         return view('pages.order', compact('id','error'));
      }else{
          $new_session->num_of_taken_share += $request->num_of_taken_share;
-         $new_session->setRemainingsharesAttribute($new_session->total_num_of_shares -$new_session-> num_of_taken_share);
+        //  $new_session->Remainingshares = ($new_session->total_num_of_shares -$new_session->num_of_taken_share);
         //  $session_update->Remainingshares = $session[0]->Remainingshares;
          $new_session->save();
      }

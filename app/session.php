@@ -33,12 +33,12 @@ class session extends Model
        
     }
 
-    public function setRemainingsharesAttribute($value)
-	{
-        $this->attributes['Remainingshares'] = $value ;
+    // public function setRemainingsharesAttribute($value)
+	// {
+    //     $this->attributes['Remainingshares'] = $value ;
        
        
-    }
+    // }
 
     public function getTakenSharesPresentAttribute()
 	{
