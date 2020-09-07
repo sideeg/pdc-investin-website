@@ -160,13 +160,13 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 my-3 d-flex justify-content-center">
-                        <a href="#" data-toggle="modal" data-target="largeModal{{$item->id}}" class="btn-blog mx-3 py-2 px-4">{{ __('content.details')}}</a>
+                        <a href="javascript:void(0)" data-toggle="modal" data-id="{{$item->id}}" data-target="#largeModal-{{$item->id}}" class="btn-blog mx-3 py-2 px-4">{{ __('content.details')}}</a>
                         <a href="{{route('order', $item->id)}}" class="btn-order mx-3 py-2 px-4">{{ __('content.order')}}</a>
                     </div>
 
                     <!-- MODAL -->
                     <div>
-                        <div id="largeModal{{$item->id}}" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog">
+                        <div id="largeModal-{{$item->id}}" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog">
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content">
                                     <div class="modal-header row mx-0">
