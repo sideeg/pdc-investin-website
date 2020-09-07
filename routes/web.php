@@ -25,16 +25,14 @@ Route::get('locale/{locale}', function ($locale){
 
 Route::get("/","homeController@index");
 Route::post("/contact","homeController@message")->name('contact');
+
 Route::get("/blog","blogController@index")->name('blog');
 Route::get("/article/{id}","blogController@blogById")->name('article');
-Route::get("/sector/{id}","sectorController@index");
-<<<<<<< HEAD
-Route::get("/sector/{id}/order","sectorController@showForm");
-Route::get("/sector/{id}/order","sectorController@order");
 
-=======
+Route::get("/sector/{id}","sectorController@index");
 Route::get("/sector/{id}/order","sectorController@showForm")->name('order');
->>>>>>> 56a30245bad175bbd30129cc73abd07c3a4c59e8
+Route::post("/sector/{id}/order","sectorController@order")->name('shares_order');
+
 
 
 

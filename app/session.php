@@ -33,6 +33,13 @@ class session extends Model
        
     }
 
+    public function setRemainingsharesAttribute($value)
+	{
+        $this->attributes['Remainingshares'] = $value ;
+       
+       
+    }
+
     public function getTakenSharesPresentAttribute()
 	{
         return $this->num_of_taken_share >= $this->total_num_of_shares ?  "100" :

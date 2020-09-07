@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\sector;
 use App\session;
+use App\share_order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -23,12 +24,6 @@ class sectorController extends Controller
         $session =json_decode( session::where('sector_id', $id)->whereRaw("num_of_taken_share < total_num_of_shares")
         ->select('*')->get());
 
-<<<<<<< HEAD
-          dd($sector);       
-=======
-        //  dd($session);       
->>>>>>> 56a30245bad175bbd30129cc73abd07c3a4c59e8
-        
         return view('pages.sector')->with('sector',$sector )->with('session',$session );//TODO page_name
     }
     
@@ -37,9 +32,10 @@ class sectorController extends Controller
      * 
      * 
      */
-    public function showForm()
+    public function showForm($id)
     {
-        return view('pages.order');
+        $error = false;
+        return view('pages.order', compact('id','error'));
 
         # code...
     }
@@ -49,25 +45,49 @@ class sectorController extends Controller
      * 
      * 
      */
-    public function order(Request $request)
+    public function order(Request $request, $id)
 {
     $data = $request->validate([
         'name' => ['required'],
         'address' => ['required'],
+        'email' => ['required'],
         'session_id' => ['required'],
         'phone_number' => ['required'],
         'num_of_taken_share' => ['required'],
 
 
      ]);
-     $session =json_decode( session::where('sector_id',$id)->whereRaw("num_of_taken_share < total_num_of_shares")
-     ->get() );
-    dd($session->Remainingshares);
+     $session =json_decode( session::find($id)->get() );
+     $new_session = session::find($id);
+
+     
+        // dd($session[0]->Remainingshares ."pppppppppppppppppppppppppppppp". $request->num_of_taken_share );
+     if($session[0]->Remainingshares < $request->num_of_taken_share){
+         $error = true;
+        return view('pages.order', compact('id','error'));
+     }else{
+         $new_session->num_of_taken_share += $request->num_of_taken_share;
+         $new_session->setRemainingsharesAttribute($new_session->total_num_of_shares -$new_session-> num_of_taken_share);
+        //  $session_update->Remainingshares = $session[0]->Remainingshares;
+         $new_session->save();
+     }
         //  $data->num_of_taken_share > 
-    $ins = $data->all();
+    // $ins = $request->all();
+    // dd('here');
+    // $store = DB::table("shares_order")->insert([$ins]);
+    $order = new share_order();
+    $order->name = $request->name;
+    $order->address = $request->address;
+    $order->email = $request->email;
+    $order->session_id = $request->session_id;
+    $order->phone_number = $request->phone_number;
+    $order->num_of_taken_share = $request->num_of_taken_share;
     
-    $store = DB::table("share_order")->insert([$ins]);
-    share_order()->flash('message', 'success');
-    return url('Users/home');//TODO page_name
+    $order->save();
+    // dd($order);
+
+
+    // share_order()->flash('message', 'success');
+    return redirect('/');//TODO page_name
 }
 }

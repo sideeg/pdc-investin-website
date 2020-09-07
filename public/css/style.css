@@ -246,6 +246,10 @@ p {
     word-break: keep-all !important;
 }
 
+.flex-grow-0 {
+    flex-grow: 0 !important;
+}
+
 /*****************
   . ABOUT US
 *****************/

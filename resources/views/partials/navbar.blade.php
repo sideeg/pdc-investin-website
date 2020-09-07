@@ -12,7 +12,7 @@
                 <i class="mdi mdi-menu"></i>
             </button>    
         {{-- </div> --}}
-        <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="collapse navbar-collapse flex-grow-0" id="navbarCollapse">
             <ul class="navbar-nav navbar-center px-auto text-center" id="mySidenav">
                 {{-- <div class="row"> --}}
                     <li class="nav-item current">
@@ -22,13 +22,13 @@
                         <a href="#about" class="nav-link px-0 text-uppercase">{{ __('content.about')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a href="sectors/1" class="nav-link px-0 text-uppercase">{{ __('content.investmentSectors')}}</a>
+                        <a href="#" class="nav-link px-0 text-uppercase">{{ __('content.investmentSectors')}}</a>
                     </li>
                     <li class="nav-item">
                         <a href="#network" class="nav-link px-0 text-uppercase">{{ __('content.network')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a href="blogs" class="nav-link px-0 text-uppercase">{{ __('content.blog')}}</a>
+                        <a href="{{ route('blog') }}" class="nav-link px-0 text-uppercase">{{ __('content.blog')}}</a>
                     </li>
                     
                     <li class="nav-item">
