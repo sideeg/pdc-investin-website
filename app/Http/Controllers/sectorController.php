@@ -17,13 +17,13 @@ class sectorController extends Controller
     {
         // return view('pages.sector');
 
-        $sector = sector::where('id',$id)->select('id','icon',"image1","image2","image3", 'background_image',
-        'sector_name_en','sector_name_ar', 'Brief_en','Brief_ar',"text_en","text_ar")->get();
+        $sector = json_decode( sector::where('id',$id)->select('id','icon',"image1","image2","image3", 'background_image',
+        'sector_name_en','sector_name_ar', 'Brief_en','Brief_ar',"text_en","text_ar")->get());
 
         $session =json_decode( session::where('sector_id',$id)->whereRaw("num_of_taken_share < total_num_of_shares")
         ->get() );
 
-          dd($session);       
+          dd($sector);       
         
         return view('pages.sector')->with('sector',$sector )->with('session',$session );//TODO page_name
     }
@@ -56,6 +56,10 @@ class sectorController extends Controller
 
 
      ]);
+     $session =json_decode( session::where('sector_id',$id)->whereRaw("num_of_taken_share < total_num_of_shares")
+     ->get() );
+    dd($session->Remainingshares);
+        //  $data->num_of_taken_share > 
     $ins = $data->all();
     
     $store = DB::table("share_order")->insert([$ins]);
