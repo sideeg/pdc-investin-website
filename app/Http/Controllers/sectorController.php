@@ -67,14 +67,10 @@ class sectorController extends Controller
         return view('pages.order', compact('id','error'));
      }else{
          $new_session->num_of_taken_share += $request->num_of_taken_share;
-        //  $new_session->Remainingshares = ($new_session->total_num_of_shares -$new_session->num_of_taken_share);
-        //  $session_update->Remainingshares = $session[0]->Remainingshares;
+       
          $new_session->save();
      }
-        //  $data->num_of_taken_share > 
-    // $ins = $request->all();
-    // dd('here');
-    // $store = DB::table("shares_order")->insert([$ins]);
+        
     $order = new share_order();
     $order->name = $request->name;
     $order->address = $request->address;
@@ -84,7 +80,6 @@ class sectorController extends Controller
     $order->num_of_taken_share = $request->num_of_taken_share;
     
     $order->save();
-    // dd($order);
 
 
     // share_order()->flash('message', 'success');
