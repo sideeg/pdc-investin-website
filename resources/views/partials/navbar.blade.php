@@ -4,7 +4,7 @@
     <div class="container row mx-0 d-flex justify-content-center">
         {{-- <div class="row"> --}}
             <!-- LOGO -->
-            <a class="navbar-brand logo text-green" href="/">
+            <a class="navbar-brand logo text-green" href="{{ route('home') }}">
                 <img src="{{ asset('images/Investin-logo.png') }}" alt="missing_logo" height="40">
                 <!-- Invesin -->
             </a>
@@ -12,21 +12,24 @@
                 <i class="mdi mdi-menu"></i>
             </button>    
         {{-- </div> --}}
-        <div class="collapse navbar-collapse flex-grow-0" id="navbarCollapse">
+        <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-center px-auto text-center" id="mySidenav">
                 {{-- <div class="row"> --}}
                     <li class="nav-item current">
-                    <a href="/" class="nav-link px-0 text-uppercase">{{ __('content.home')}}</a>
+                    <a href="{{ route('home') }}" class="nav-link px-0 text-uppercase">{{ __('content.home')}}</a>
                     </li>
-                    <li class="nav-item"> 
-                        <a href="#about" class="nav-link px-0 text-uppercase">{{ __('content.about')}}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link px-0 text-uppercase">{{ __('content.investmentSectors')}}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#network" class="nav-link px-0 text-uppercase">{{ __('content.network')}}</a>
-                    </li>
+                    @if (Route::CurrentRouteName() == 'home' )
+                        <li class="nav-item"> 
+                            <a href="#about" class="nav-link px-0 text-uppercase">{{ __('content.about')}}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link px-0 text-uppercase">{{ __('content.investmentSectors')}}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#network" class="nav-link px-0 text-uppercase">{{ __('content.network')}}</a>
+                        </li>    
+                    @endif
+                    
                     <li class="nav-item">
                         <a href="{{ route('blog') }}" class="nav-link px-0 text-uppercase">{{ __('content.blog')}}</a>
                     </li>
@@ -48,13 +51,7 @@
             </ul>
             {{-- <ul class="navbar-nav navbar-center ml-auto" id="mySidenav">
                 <li class="nav-item">
-                    <a href="#" class="nav-link"><i class="fab fa-google-plus-g"></i></a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link"><i class="fab fa-linkedin"></i></a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="nav-link"><i class="fab fa-google-plus-g"></i>language</a>
                 </li>
             </ul> --}}
         </div>

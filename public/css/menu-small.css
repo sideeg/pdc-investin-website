@@ -80,7 +80,7 @@
     position: absolute;
     top: 80%;
     left: 50%;
-    /* transform: translateX(-50%); */
+    transform: translateX(-50%);
     /* margin-top: 33px; */
     margin: 0 auto;
     border-radius: 50%;
@@ -189,9 +189,9 @@
         color: #000 !important;
         margin: 0px;
     }
-    .navbar-custom>.container {
+    /* .navbar-custom>.container {
         width: 90%;
-    }
+    } */
     .navbar-custom .navbar-nav li.active a {
         border-color: transparent;
     }

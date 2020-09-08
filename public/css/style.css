@@ -211,7 +211,7 @@ p {
     width: 15px;
     height: 15px;
     position: absolute;
-    top: 100%;
+    top: 120%;
     /* margin-top: 43px; */
     border-radius: 50%;
     background: #009F61;
@@ -231,7 +231,7 @@ p {
     width: 15px;
     height: 15px;
     position: absolute;
-    top: 100%;
+    top: 120%;
     /* margin-top: 43px; */
     border-radius: 50%;
     background: #fff;
@@ -250,6 +250,9 @@ p {
     flex-grow: 0 !important;
 }
 
+.modal-translateY {
+    transform: translateY(100%) !important;
+}
 /*****************
   . ABOUT US
 *****************/
@@ -294,7 +297,7 @@ p {
     text-align: center;
 }
 
-.feature > .fe-icon {
+.feature > a > .fe-icon {
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -311,20 +314,29 @@ p {
     /* border-radius: 10px; */
 }
 
-.feature > .fe-icon > img {
+.feature > .link-sector:link, .feature > .link-sector:visited {
+    color: #fff;
+}
+
+
+.feature > .link-sector:hover {
+    color: #b4ffe2;
+}
+
+.feature > a >.fe-icon > img {
     width: 3.4rem;
     height: 3.4rem;
     border-radius: 10px;
 }
 
-.feature > .fe-icon > h3{
+.feature > a > .fe-icon > h3{
     /* line-height: 2.4em; */
     padding: 5px;
     /* text-align: left; */
     /* margin-top: -12px; */
 }
 
-.feature > .fe-head > p{
+.feature > a > .fe-head > p{
     margin-top: 10px;
 }
 
@@ -334,7 +346,7 @@ p {
     .feature {
         text-align: center;
     }
-    .feature > .fe-icon {
+    .feature > a > .fe-icon {
         /* display: block;
         float: none;
         margin: auto; */
@@ -343,7 +355,7 @@ p {
         height: 8rem;
         /* height: auto; */
     }
-    .feature > .fe-icon > h3{
+    .feature > a > .fe-icon > h3{
         text-align: center;
     }
 
@@ -354,7 +366,7 @@ p {
 @media only screen and (max-width: 767px) {
 
     
-.feature > .fe-icon > h3{
+.feature > a > .fe-icon > h3{
  
     margin-top: 0;
 }

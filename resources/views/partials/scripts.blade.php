@@ -1,7 +1,7 @@
 
         <!-- js placed at the end of the document so the pages load faster -->
-        <!-- <script src="{{ asset('js/jquery.min.js') }}"></script> -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+        <script src="{{ asset('js/jquery.min.js') }}"></script>
+        {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script> --}}
         <script src="{{ asset('js/popper.min.js') }}"></script>
         <script src="{{ asset('js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('js/scrollspy.min.js') }}"></script>
@@ -31,13 +31,16 @@
         
         <script>
             
+
             $(document).ready(function() {
+                var readMore = document.getElementById('readMore').innerText;
+                var readLess = document.getElementById('readLess').innerText;
                 $('#history').showMore({
                     minheight: 200,
-                    buttontxtmore: "readmore",
-                    buttontxtless: "readless",
-                    buttoncss: 'my-button-css btn btn-buttons btn-round',
-                    animationspeed: 250
+                    buttontxtmore: readMore,
+                    buttontxtless: readLess,
+                    buttoncss: 'my-3 showmore-button',
+                    animationspeed: 550
                 });
             });
 

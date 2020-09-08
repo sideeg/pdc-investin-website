@@ -1,5 +1,6 @@
 body {
     /* direction: rtl ; */
+    
 }
 
 .row {
@@ -16,7 +17,19 @@ body {
 /* mozilla solution */
 input:-moz-placeholder { text-align:right; }
 
+/* input, textarea { 
+    unicode-bidi:bidi-override; 
+    direction: RTL; 
+}
 
+input.ltr,textarea.ltr { 
+    unicode-bidi:bidi-override; 
+    direction: ltr;
+    text-align: right; 
+} */
+input,textarea {
+    direction: rtl;
+}
 
 /*****************
   . NAVBAR
@@ -42,7 +55,25 @@ input:-moz-placeholder { text-align:right; }
     margin: auto 0;
 }
 
+@media (min-width: 768px){
+    .navbar-expand-md .navbar-collapse {
+        justify-content: flex-end;
+    }
+}
 
+@media (min-width: 768px){
+    .navbar-expand-md .navbar-nav {
+        -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+    }
+}
+
+
+@media (min-width: 200px) and (max-width: 600px) {
+    .navbar-custom>.container {
+        width: 90%;
+    }
+}
 
 /*****************
   . ABOUT US
@@ -182,4 +213,31 @@ input:-moz-placeholder { text-align:right; }
     background: #1D7863;
     color: #fff;
     border: 1px solid #1D7863;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*================================== ORDER PAGE ===============================*/
+
+.modal-translateY {
+    transform: translateY(180%) !important;
+}
+
+
+
+@media only screen and (max-width: 320px) {
+    .modal-translateY {
+        transform: translateY(150%) !important;
+    }
 }

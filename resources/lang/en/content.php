@@ -17,7 +17,7 @@ return [
     /************* Home **************/
     'investmentCompany' => 'Investment Company',
     'aboutUs' => 'About Us',
-    'readmore' => 'Read more',
+    'readMore' => 'Read more',
     'readLess' => 'Read Less',
     'ourNetwork' => 'Our Network',
     'blog' => 'Blog',

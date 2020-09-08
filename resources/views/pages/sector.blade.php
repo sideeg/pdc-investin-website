@@ -166,8 +166,8 @@
 
                     <!-- MODAL -->
                     <div>
-                        <div id="largeModal-{{$item->id}}" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog">
-                            <div class="modal-dialog modal-lg">
+                        <div id="largeModal-{{$item->id}}" class="modal fade bs-example-modal-lg" data-backdrop="" tabindex="-1" role="dialog">
+                            <div class="modal-dialog modal-lg modal-translateY">
                                 <div class="modal-content">
                                     <div class="modal-header row mx-0">
                                         <h4 class="modal-title">Session Details</h4>

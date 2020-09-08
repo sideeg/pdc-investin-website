@@ -34,11 +34,11 @@ class sectorSeeder extends Seeder
             'intro_ar' => $faker_ar->realText(),
 
 
-            'icon'=> "02d5dd7707f341095e1f8e5a20bc6ab2",
-            'image1'=> 'a107e17d9fc11151d8343a3ae28ebdc0',
-            'image2'=> 'a6f18715b961eab511cc048667328ed4',
-            'image3'=> 'a1a28d9d9701e814810605411c3aad20',
-            'background_image'=> '7500232c44cd5d6985c0703c35132e25',
+            'icon'=> "02d5dd7707f341095e1f8e5a20bc6ab2.jpg",
+            'image1'=> 'a107e17d9fc11151d8343a3ae28ebdc0.jpg',
+            'image2'=> 'a6f18715b961eab511cc048667328ed4.jpg',
+            'image3'=> 'a1a28d9d9701e814810605411c3aad20.jpg',
+            'background_image'=> '7500232c44cd5d6985c0703c35132e25.jpg',
         ],
         [
             'sector_name_ar' => Str::random(10),
@@ -51,11 +51,11 @@ class sectorSeeder extends Seeder
             'intro_ar' => $faker_ar->realText(),
 
 
-            'icon'=> "02d5dd7707f341095e1f8e5a20bc6ab2",
-            'image1'=> '8d48c2a53ed137054f297be0b9660c0b',
+            'icon'=> "02d5dd7707f341095e1f8e5a20bc6ab2.jpg",
+            'image1'=> '8d48c2a53ed137054f297be0b9660c0b.jpg',
             'image2'=> 'Investin-logo.png',
-            'image3'=> '8b7121787f97c8f5d2b3f27e726c1680',
-            'background_image'=> '8e02094d3a0491dce262a5a820e9a0e7',
+            'image3'=> '8b7121787f97c8f5d2b3f27e726c1680.jpg',
+            'background_image'=> '8e02094d3a0491dce262a5a820e9a0e7.jpg',
 
 
         ],

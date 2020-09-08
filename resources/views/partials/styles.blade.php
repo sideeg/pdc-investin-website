@@ -42,14 +42,31 @@
 @endif
 
 <style>
-    .showmore-button {
-        cursor: pointer; 
-        background-color: #999; 
-        color: white; 
-        text-transform: uppercase; 
-        text-align: center; 
-        padding: 7px 5px 5px 5px; 
-        margin-top: 5px;
+     
+     .showmore-button, .showmore-button:link,.showmore-button:visited {
+        text-transform: capitalize;
+        text-decoration: none;
+        font-weight: 400;
+        /* text-align: center; */
+        white-space: nowrap;
+        vertical-align: middle;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #009F61;
+        /* padding: 5px 15px; */
+        border: 1px solid #009F61;
+        border-radius: 100px;
+        width: fit-content;
+        display: inline-block;
+        
+    }
+
+    .showmore-button:hover {
+        color: #fff;
+        border: 1px solid #fff;
+        border-radius: 100px;
+        background: #00B489;
     }
     .form-control, .form-control:focus {
         background: #00B489;

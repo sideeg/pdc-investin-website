@@ -83,6 +83,6 @@ class sectorController extends Controller
 
 
     // share_order()->flash('message', 'success');
-    return redirect('/');//TODO page_name
+    return redirect('sector',$id);//TODO page_name
 }
 }

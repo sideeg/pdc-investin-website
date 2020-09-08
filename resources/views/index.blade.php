@@ -4,7 +4,7 @@
 
 
     <!-- HOME START-->
-    <section class="bg-half" style="background-image: url('{{ asset($intro[0]->icon_full_path) }}');object-fit: contain;" id="home">
+    <section id="home" class="bg-half" style="background-image: url('{{ asset($intro[0]->icon_full_path) }}');object-fit: contain;" id="home">
         <div class="bg-overlay"></div>
         <div class="home-center">
             <div class="home-desc-center">
@@ -51,7 +51,7 @@
     <!-- HOME END--> 
 
     <!-- ABOUT US -->
-    <section class="section">
+    <section id="about-us" class="section">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -90,10 +90,10 @@
                                                 </div>    
                                             @endforeach
                                         @endif
-                                        <div class="col-12 row  m-0 time-line">
+                                        {{-- <div class="col-12 row  m-0 time-line">
                                             <div class="col-12 text-green font-b">2015 - 2018</div>
                                             <div class="col-12 mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, numquam!</div>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -110,10 +110,14 @@
             </div>
         </div>
     </section>
+    <div hidden>
+        <span id="readMore">{{__('content.readMore') }}</span>
+        <span id="readLess">{{__('content.readLess') }}</span>
+    </div>
     <!-- ABOUT US END -->
     
     <!-- SECTORS -->
-    <section class="section bg-green">
+    <section id="sectors" class="section bg-green">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -137,11 +141,14 @@
                                     @foreach($sector as $item)
                                         <div class="col-md-4">
                                             <div class="feature">
-                                                <div class="fe-icon row ">
-                                                    <!-- <i class="fas fa-seedling"></i> -->
-                                                    <img src="{{asset($item->icon_full_path)}}" alt="" srcset="">
-                                                    <h3 class="word-keep">{{ $item->sector_name_en}}</h3>
-                                                </div>
+                                                <a href="{{ route('sector', $item->id)}}" class="link-sector">
+
+                                                    <div class="fe-icon row ">
+                                                        <!-- <i class="fas fa-seedling"></i> -->
+                                                        <img src="{{asset($item->icon_full_path)}}" alt="" srcset="">
+                                                        <h3 class="word-keep">{{ $item->sector_name_en}}</h3>
+                                                    </div>
+                                                </a>
                                                 <div class="fe-head">
                                                     <p>
                                                         {{ $item->Brief_en}}
@@ -154,11 +161,13 @@
                                     @foreach($sector as $item)
                                         <div class="col-md-4">
                                             <div class="feature">
-                                                <div class="fe-icon row ">
-                                                    <!-- <i class="fas fa-seedling"></i> -->
-                                                    <img src="{{asset($item->icon_full_path)}}" alt="" srcset="">
-                                                    <h3 class="word-keep">{{ $item->sector_name_ar}}</h3>
-                                                </div>
+                                                <a href="{{ route('sector', $item->id)}}" class="link-sector">
+                                                    <div class="fe-icon row ">
+                                                        <!-- <i class="fas fa-seedling"></i> -->
+                                                        <img src="{{asset($item->icon_full_path)}}" alt="" srcset="">
+                                                        <h3 class="word-keep">{{ $item->sector_name_ar}}</h3>
+                                                    </div>
+                                                </a>
                                                 <div class="fe-head">
                                                     <p>
                                                         {{ $item->Brief_ar}}
@@ -169,13 +178,15 @@
                                     @endforeach
                                 @endif
 
-                                <div class="col-md-4">
+                                {{-- <div class="col-md-4">
                                     <div class="feature">
-                                        <div class="fe-icon row">
-                                            <!-- <i class="fas fa-desktop"></i> -->
-                                            <img src="images/blog/blog-10.jpg"  alt="" srcset="">
-                                            <h3 class="word-keep">Technology Sector</h3>
-                                        </div>
+                                        <a href="{{ route('sector', $item->id)}}">
+                                            <div class="fe-icon row">
+                                                <!-- <i class="fas fa-desktop"></i> -->
+                                                <img src="images/blog/blog-10.jpg"  alt="" srcset="">
+                                                <h3 class="word-keep">Technology Sector</h3>
+                                            </div>
+                                        </a>
                                         <div class="fe-head">
                                             <p>It is a long established fact that a reader will be distracted by the readable content of at its layout.</p>
                                         </div>
@@ -193,7 +204,7 @@
                                             <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their text, and a search.</p>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                                 
                             </div>
                         </div>
@@ -205,7 +216,7 @@
     <!-- SECTORS END -->
     
     <!-- OUR NETWORK -->
-    <section class="section bg-grey">
+    <section id="our-network" class="section bg-grey">
         <div class="container">
             <div class="title-heading text-center">
                 <h2 class="text-uppercase word-keep dot">{{ __('content.ourNetwork')}}</h2>
@@ -334,7 +345,7 @@
                                                 <div class="first-section">
                                                     <img src="{{asset($item->image_full_path) }}" class="img-responsive img-blog-top" alt="" srcset="">
                                                     <div class="first-section-overlay"></div>
-                                                    <h4 class="blog-title text-white word-keep">{{ $item->blog_name_en}}</h4>
+                                                    <h4 class="blog-title word-keep"><a href="{{ route('article', $item->id) }}" class="text-white">{{ $item->blog_name_en}}</a></h4>
                                                 </div>
                                                 <div class="second-section">
                                                     <p class="text-left mx-4 mt-2">
@@ -352,7 +363,7 @@
                                                 <div class="first-section">
                                                     <img src="images/about/about-page.jpg" class="img-responsive img-blog-top" alt="" srcset="">
                                                     <div class="first-section-overlay"></div>
-                                                    <h4 class="blog-title text-white word-keep">{{ $item->blog_name_ar}}</h4>
+                                                    <h4 class="blog-title word-keep"><a href="{{ route('article', $item->id) }}" class="text-white">{{ $item->blog_name_ar}}</a></h4>
                                                 </div>
                                                 <div class="second-section">
                                                     <p class="text-left mx-4 mt-2">
@@ -403,13 +414,13 @@
                     </div>
                 </div>
             </div>
-            <h4 class="text-center text-white mt-5 more-arrow">{{ __('content.more')}}</h4>
+            <h4 class="text-center mt-5 more-arrow"><a href="{{ route('blog')}}" class="text-white">{{ __('content.more')}}</a></h4>
         </div>
     </section>
     <!-- BLOG END -->
     
     <!-- SUCCESS -->
-    <section class="section bg-grey">
+    <section id="success-stories" class="section bg-grey">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
