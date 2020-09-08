@@ -17,7 +17,7 @@
                                 @if (App::getLocale() == 'en')
 
                                 <h2 class="text-black text-uppercase word-keep">
-                                    {{ $intro[0]->section_name_ar}}
+                                    {{ $intro[0]->section_name_en}}
                                 </h2>
                                 <div class="row justify-content-center">
                                 <p class="text-black landing-3 col-lg-6 col-md-6 col-sm-12">
