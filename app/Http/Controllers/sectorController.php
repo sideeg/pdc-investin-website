@@ -6,6 +6,7 @@ use App\session;
 use App\share_order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Redirect;
 
 
 class sectorController extends Controller
@@ -82,7 +83,9 @@ class sectorController extends Controller
     $order->save();
 
 
+    //  dd('here');
     // share_order()->flash('message', 'success');
-    return redirect('sector',$id);//TODO page_name
+    // return redirect('sector',$id);//TODO page_name
+    return redirect()->route('sector', ['id' => $session->sector_id]);
 }
 }
