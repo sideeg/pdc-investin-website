@@ -15,7 +15,9 @@ class CreateSessionTable extends Migration
     {
         Schema::create('session', function (Blueprint $table) {
             $table->id();
-            $table->string('session_name');
+            $table->string('session_name_en');
+            $table->string('session_name_ar');
+
             $table->string('start_date');
             $table->string('end_date');
             
