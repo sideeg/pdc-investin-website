@@ -13,7 +13,7 @@
             </button>    
         {{-- </div> --}}
         <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-center px-auto text-center" id="mySidenav">
+            <ul class="navbar-nav navbar-center px-auto text-center text-grey" id="mySidenav">
                 {{-- <div class="row"> --}}
                     <li class="nav-item current">
                     <a href="{{ route('home') }}" class="nav-link px-0 text-uppercase">{{ __('content.home')}}</a>
@@ -34,26 +34,30 @@
                         <a href="{{ route('blog') }}" class="nav-link px-0 text-uppercase">{{ __('content.blog')}}</a>
                     </li>
                     
-                    <li class="nav-item">
+                    {{-- <li class="nav-item last-elements">
                         <span class="nav-link px-0">
                             @if (App::getLocale() == 'en')
-                            <img src="{{asset('images/sudan.svg')}}" class="lang-svg" alt=""> <a href="{{ url('locale/ar') }}" class="mx-1">{{__('content.arabic')}}</a> 
-    
-                                {{-- <span class="row justify-content-center"> <img src="{{asset('images/logo/sudan.svg')}}" class="lang-svg mx-1" alt=""> <a href="{{route('locale_ar')}}" class=" ">{{ __('content.arabic')}}</a> &nbsp;/&nbsp; <img src="{{asset('images/logo/united-kingdom.svg')}}" class="lang-svg mx-1" alt=""> <a href="{{route('locale_en')}}">{{ __('content.english')}}</a></span> --}}
-    
+                                <img src="{{asset('images/sudan.svg')}}" class="lang-svg" alt=""> <a href="{{ url('locale/ar') }}" class="mx-1">{{__('content.arabic')}}</a> 
                             @else
-                            <a href="{{ url('locale/en') }}" class=""><img src="{{asset('images/united-kingdom.svg')}}" class="lang-svg mx-1" alt=""> {{__('content.english')}}</a>
+                                <a href="{{ url('locale/en') }}" class=""><img src="{{asset('images/united-kingdom.svg')}}" class="lang-svg mx-1" alt=""> {{__('content.english')}}</a>
                             @endif
                         </span>
-                    </li>
-                       
+                    </li> --}}
                 {{-- </div> --}}
             </ul>
-            {{-- <ul class="navbar-nav navbar-center ml-auto" id="mySidenav">
+
+            
+            <ul class="navbar-nav navbar-center ml-auto" id="mySidenav">
                 <li class="nav-item">
-                    <a href="#" class="nav-link"><i class="fab fa-google-plus-g"></i>language</a>
+                    <span class="nav-link px-0 text-center">
+                        @if (App::getLocale() == 'en')
+                            <img src="{{asset('images/sudan.svg')}}" class="lang-svg" alt=""> <a href="{{ url('locale/ar') }}" class="mx-1">{{__('content.arabic')}}</a> 
+                        @else
+                            <a href="{{ url('locale/en') }}" class=""><img src="{{asset('images/united-kingdom.svg')}}" class="lang-svg mx-1" alt=""> {{__('content.english')}}</a>
+                        @endif
+                    </span>
                 </li>
-            </ul> --}}
+            </ul>
         </div>
     </div>
 </nav>

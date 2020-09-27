@@ -1,6 +1,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Responsive Multipurpose HTML5 Business Template">
+<meta name="description" content="">
 <meta name="author" content="Shreethemes">
 
 <link rel="shortcut icon" href="images/fav-ico.png">
@@ -8,9 +8,11 @@
 <title>Investin</title>
 
 <!-- Google Fonts -->
-<!-- <link href="https://fonts.googleapis.com/css?family=Lato:400,500,600,700|Poppins" rel="stylesheet"> -->
-<link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;500;600&display=swap" rel="stylesheet">
+{{-- <link href="https://fonts.googleapis.com/css?family=Lato:400,500,600,700|Poppins" rel="stylesheet"> --}}
+<link href="https://fonts.googleapis.com/css?family=Nunito:200,400,600" rel="stylesheet">
 
+{{-- <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;500;600&display=swap" rel="stylesheet"> --}}
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 <!-- Magnificpopup Css -->
 <link rel="stylesheet" type="text/css" href="{{ asset('css/magnific-popup.css') }}">
 
@@ -18,7 +20,6 @@
 <link href="{{ asset('css/materialdesignicons.min.css') }}" rel="stylesheet">
 <link href="{{ asset('css/fontawesome.css') }}" rel="stylesheet">
 <link href="{{ asset('css/pe-icon-7-stroke.css') }}" rel="stylesheet">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/5.6.1/css/font-awesome.min.css">
 <!--Slider-->
 <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}"/> 
 <link rel="stylesheet" href="{{ asset('css/owl.theme.css') }}"/> 
@@ -42,6 +43,20 @@
 @endif
 
 <style>
+
+    @if (App::getLocale() == 'en')
+        body {
+            font-family: 'Nunito' ,'Lato';
+            font-weight: 400;
+
+        }
+    @else
+        body {
+            font-family: 'Tajawal', sans-serif;;
+            font-weight: 400;
+
+        }
+    @endif
      
      .showmore-button, .showmore-button:link,.showmore-button:visited {
         text-transform: capitalize;
@@ -59,6 +74,7 @@
         border-radius: 100px;
         width: fit-content;
         display: inline-block;
+        transition: .6s all;
         
     }
 

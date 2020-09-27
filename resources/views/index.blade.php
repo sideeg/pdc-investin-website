@@ -56,7 +56,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="title-heading">
-                        <h2 class="color-green text-center word-keep dot">{{ __('content.aboutUs')}}</h2>
+                        <h4 class="text-green text-center word-keep dot">{{ __('content.aboutUs')}}</h4>
                         <div class="row justify-content-center">
                         <p class="mx-auto my-3 text-center col-lg-6 col-md-6 col-sm-12">
                             @if (App::getLocale() == 'en')
@@ -67,7 +67,7 @@
                         </p>
 
                         </div>
-                        <div class="row justify-content-center">
+                        <div class="row justify-content-center my-5">
                             <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12">
                                 <div id="history" class="row">
                                     <div class="row time-line-row mx-2">
@@ -122,15 +122,15 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="title-heading">
-                        <h2 class="text-uppercase text-center text-white word-keep dot-white">{{ __('content.investmentSectors')}}</h2>
-                        <div class="row justify-content-center">
-                        <p class="mx-auto my-4 text-center text-white col-lg-6 col-md-6 col-sm-12">
-                            @if (App::getLocale() == 'en')
-                                {{ $sector[0]->intro_en}}        
-                            @else
-                                {{ $sector[0]->intro_ar}}    
-                            @endif
-                        </p>
+                        <h4 class="text-uppercase text-center text-white word-keep dot-white">{{ __('content.investmentSectors')}}</h4>
+                        <div class="row justify-content-center mb-5">
+                            <p class="mx-auto my-4 text-center text-white col-lg-6 col-md-6 col-sm-12">
+                                @if (App::getLocale() == 'en')
+                                    {{ $sector[0]->intro_en}}        
+                                @else
+                                    {{ $sector[0]->intro_ar}}    
+                                @endif
+                            </p>
 
                         </div>
                         <div class="container">
@@ -150,7 +150,7 @@
                                                     </div>
                                                 </a>
                                                 <div class="fe-head">
-                                                    <p>
+                                                    <p class="two-lines">
                                                         {{ $item->Brief_en}}
                                                     </p>
                                                 </div>
@@ -169,7 +169,7 @@
                                                     </div>
                                                 </a>
                                                 <div class="fe-head">
-                                                    <p>
+                                                    <p class="two-lines">
                                                         {{ $item->Brief_ar}}
                                                     </p>
                                                 </div>
@@ -218,9 +218,9 @@
     <!-- OUR NETWORK -->
     <section id="our-network" class="section bg-grey">
         <div class="container">
-            <div class="title-heading text-center">
-                <h2 class="text-uppercase word-keep dot">{{ __('content.ourNetwork')}}</h2>
-                <div class="row justify-content-center">
+            <div class="title-heading">
+                <h4 class="text-green text-uppercase text-center word-keep dot">{{ __('content.ourNetwork')}}</h4>
+                <div class="row justify-content-center mb-5">
                     <p class="mx-auto my-4 text-center col-lg-6 col-md-6 col-sm-12">
                         @if (App::getLocale() == 'en')
                             {{ $our_network[0]->intro_en}}        
@@ -234,8 +234,18 @@
                     <div class="row justify-content-center">
                         @forelse ($our_network as $item)
                         <div class="col-md-4 col-sm-6">
-                            <div class="network">
-                                <img src="{{asset($item->logo_full_path) }}" class="img-responsive img-network" alt="" srcset="">
+                            <div class="network row">
+                                {{-- <img src="{{asset($item->logo_full_path) }}" class="img-responsive img-network" alt="" srcset=""> --}}
+                                <div class="col-lg-5 col-md-12 mx-0 px-0 text-center">
+                                    {{-- <img src="images/about/about-page.jpg" class="img-responsive img-network" alt="" srcset=""> --}}
+                                    <img src="{{asset($item->logo_full_path) }}" class="img-responsive img-network" alt="" srcset="">
+                                </div>
+                                <div class="col-lg-7 col-md-12 mx-0 px-0">
+                                    <div class="head-network">
+                                        <h5 class="text-uppercase">cat</h5>
+                                        <p>Lorem ipsum dolor sit.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         @empty
@@ -324,8 +334,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="title-heading text-center">
-                        <h2 class="text-uppercase text-white word-keep dot-white">{{ __('content.blog')}}</h2>
-                        <div class="row justify-content-center">
+                        <h4 class="text-uppercase text-white word-keep dot-white">{{ __('content.blog')}}</h4>
+                        <div class="row justify-content-center mb-5">
                             <p class="mx-auto my-4 text-center text-white col-lg-6 col-md-6 col-sm-12">
                             
                                 @if (App::getLocale() == 'en')
@@ -348,7 +358,7 @@
                                                     <h4 class="blog-title word-keep"><a href="{{ route('article', $item->id) }}" class="text-white">{{ $item->blog_name_en}}</a></h4>
                                                 </div>
                                                 <div class="second-section">
-                                                    <p class="text-left mx-4 mt-2">
+                                                    <p class="text-left mx-4 mt-2 two-lines">
                                                         {{ $item->Brief_en}}
                                                     </p>
                                                 <p class="text-muted text-small text-left mx-4 pb-4 row"><i class="mdi mdi-calendar text-black mx-1"></i> <span class=""> {{\Carbon\Carbon::parse($item->created_at)->format('d M, yy') }}</span></p>
@@ -366,7 +376,7 @@
                                                     <h4 class="blog-title word-keep"><a href="{{ route('article', $item->id) }}" class="text-white">{{ $item->blog_name_ar}}</a></h4>
                                                 </div>
                                                 <div class="second-section">
-                                                    <p class="text-left mx-4 mt-2">
+                                                    <p class="text-left mx-4 mt-2 two-lines">
                                                         {{ $item->Brief_ar}}
                                                     </p>
                                                 <p class="text-muted text-small text-left mx-4 pb-4 row"><i class="mdi mdi-calendar text-black mx-1"></i> <span class=""> {{\Carbon\Carbon::parse($item->created_at)->format('yy, M d') }}</span></p>
@@ -414,7 +424,7 @@
                     </div>
                 </div>
             </div>
-            <h4 class="text-center mt-5 more-arrow"><a href="{{ route('blog')}}" class="text-white">{{ __('content.more')}}</a></h4>
+            <h4 class="text-center mt-5 more-arrow"><a href="{{ route('blog')}}" class="text-white">{{ __('content.more')}} </a></h4>
         </div>
     </section>
     <!-- BLOG END -->
@@ -425,7 +435,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="title-heading">
-                        <h2 class="text-uppercase text-center text-green dot">{{ __('content.successStories')}}</h2>
+                        <h4 class="text-green text-uppercase text-center text-green dot mb-4">{{ __('content.successStories')}}</h4>
                         <p class="mx-auto my-5 text-muted text-center">
                             @if (App::getLocale() == 'en')
                                 {{ $success_stories->first()->intro_en}}
@@ -434,13 +444,13 @@
                             @endif
                         </p>
                         <div class="container">
-                            <div class="row justify-content-center">
-                                <div id="owl-success-stories" class="owl-crousel">
+                            <div id="owl-success-stories" class="row justify-content-center owl-crousel mx-0">
+                                {{-- <div id="owl-success-stories" class="owl-crousel"> --}}
                                     
                                     @if (App::getLocale() == 'en')
                                         @forelse ($success_stories as $item)
-                                            <div class="col-lg-4 col-md-6 col-sm-12 bg-white m-2 success-story item">
-                                                <div class="row w-100">
+                                            <div class="col-lg-10 col-md-10 col-sm-12 bg-white m-2 success-story item">
+                                                <div class="row">
                                                     <div class="col-3">
                                                         <!-- <a href="https://fontawesome.com/icons?d=gallery&q=arrow&m=free" target="_blank"> -->
                                                         <img src="{{asset($item->icon_full_path) }}" class="success-avatar my-2" alt="" srcset="">
@@ -451,7 +461,7 @@
                                                         <span>{{ $item->created_at->diffForHumans()}}</span>
                                                     </div>
                                                 </div>
-                                                <p>
+                                                <p class="two-lines">
                                                     {{ $item->text_en}}    
                                                 </p>
                                             </div>
@@ -460,8 +470,8 @@
                                         @endforelse
                                     @else
                                         @forelse ($success_stories as $item)
-                                            <div class="col-lg-4 col-md-6 col-sm-12 bg-white m-2 success-story item">
-                                                <div class="row w-100">
+                                            <div class="col-lg-10 col-md-10 col-sm-12 bg-white m-2 success-story item">
+                                                <div class="row">
                                                     <div class="col-3">
                                                         <!-- <a href="https://fontawesome.com/icons?d=gallery&q=arrow&m=free" target="_blank"> -->
                                                         <img src="{{asset($item->icon_full_path) }}" class="success-avatar my-2" alt="" srcset="">
@@ -472,7 +482,7 @@
                                                         <span>{{ $item->created_at->diffForHumans()}}</span>
                                                     </div>
                                                 </div>
-                                                <p>
+                                                <p class="two-lines">
                                                     {{ $item->text_ar}}    
                                                 </p>
                                             </div>
@@ -480,8 +490,9 @@
                                             
                                         @endforelse
                                     @endif
-                                    <div class="col-lg-4 col-md-6 col-sm-12 bg-white m-2 success-story item">
-                                        <div class="row w-100">
+
+                                    {{-- <div class=" bg-white m-2 p-2 success-story">
+                                        <div class="row">
                                             <div class="col-3">
                                             <img src="images/about/about-page.jpg" class="success-avatar my-2" alt="" srcset="">
                                             </div>
@@ -490,10 +501,10 @@
                                                 <span>3 Days Later</span>
                                             </div>
                                         </div>
-                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic autem ratione laborum modi, obcaecati saepe dolorum aliquid? Magni, nulla minus!</p>
+                                        <p class="two-lines">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic autem ratione laborum modi, obcaecati saepe dolorum aliquid? Magni, nulla minus!</p>
                                     </div>
 
-                                    <div class="col-lg-4 col-md-6 col-sm-12 bg-white m-2 success-story item">
+                                    <div class=" bg-white m-2 p-2 success-story">
                                         <div class="row w-100">
                                             <div class="col-3">
                                             <img src="images/about/about-page.jpg" class="success-avatar my-2" alt="" srcset="">
@@ -503,10 +514,10 @@
                                                 <span>3 Days Later</span>
                                             </div>
                                         </div>
-                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic autem ratione laborum modi, obcaecati saepe dolorum aliquid? Magni, nulla minus!</p>
+                                        <p class="two-lines">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic autem ratione laborum modi, obcaecati saepe dolorum aliquid? Magni, nulla minus!</p>
                                     </div>
 
-                                    <div class="col-lg-4 col-md-6 col-sm-12 bg-white m-2 success-story item">
+                                    <div class=" bg-white m-2 p-2 success-story">
                                         <div class="row w-100">
                                             <div class="col-3">
                                             <img src="images/about/about-page.jpg" class="success-avatar my-2" alt="" srcset="">
@@ -516,10 +527,10 @@
                                                 <span>3 Days Later</span>
                                             </div>
                                         </div>
-                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic autem ratione laborum modi, obcaecati saepe dolorum aliquid? Magni, nulla minus!</p>
-                                    </div>
+                                        <p class="two-lines">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic autem ratione laborum modi, obcaecati saepe dolorum aliquid? Magni, nulla minus!</p>
+                                    </div> --}}
                                     
-                                </div>
+                                {{-- </div> --}}
                                 
                                 <!-- <div class="col-lg-4 col-md-6 col-sm-12">
 
@@ -585,7 +596,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="title-heading">
-                        <h2 class="text-uppercase text-center text-green word-keep dot">{{ __('content.contactUs')}}</h2>
+                        <h4 class="text-uppercase text-center text-green word-keep mb-5 dot">{{ __('content.contactUs')}}</h4>
 
                         <div class="container mt-5">
                             <div class="row justify-content-space">
@@ -610,7 +621,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="message" class="text-white">{{__('content.message')}}</label>
-                                                <textarea name="message" id="message" class="form-control" cols="30" rows="10"></textarea>
+                                                <textarea name="message" id="message" class="form-control" cols="30" rows="6"></textarea>
 
                                             </div>
 
@@ -629,7 +640,7 @@
                                 <div class="col-lg-4 col-md-12 col-sm-12">
                                     <div class="contact-info">
                                         <div class="contact-row row"><span class="icon col-lg-3 col-sm-12"><i class="fas fa-at m-3"></i></span><span class="info-text col-lg-9 col-sm-12">INVOICE@GMAIL.COM</span></div>
-                                        <div class="contact-row row"><span class="icon col-lg-3 col-sm-12"><i class="fas fa-at m-3"></i></span><span class="info-text col-lg-9 col-sm-12">+123456789</span></div>
+                                        <div class="contact-row row"><span class="icon col-lg-3 col-sm-12"><i class=" fas fa-phone m-3"></i></span><span class="info-text col-lg-9 col-sm-12">+123456789</span></div>
                                         <div class="contact-row row"><span class="icon col-lg-3 col-sm-12"><i class="fas fa-map-marker-alt m-3"></i></span><span class="info-text col-lg-9 col-sm-12">SUDAN, KHARTOUM KH STREET BUILDING 22</span></div>
 
                                     </div>

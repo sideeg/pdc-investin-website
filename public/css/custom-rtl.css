@@ -1,5 +1,9 @@
 body {
     /* direction: rtl ; */
+    font-family: 'Tajawal', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+
     
 }
 
@@ -17,16 +21,16 @@ body {
 /* mozilla solution */
 input:-moz-placeholder { text-align:right; }
 
-/* input, textarea { 
+p { 
     unicode-bidi:bidi-override; 
     direction: RTL; 
 }
 
-input.ltr,textarea.ltr { 
+p.ltr { 
     unicode-bidi:bidi-override; 
     direction: ltr;
     text-align: right; 
-} */
+}
 input,textarea {
     direction: rtl;
 }
@@ -37,6 +41,18 @@ input,textarea {
 #mySidenav {
     padding: auto 0 !important;
     
+}
+
+.navbar-custom {
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 600;
+    font-size: larger;
+}
+
+
+#navbarCollapse {
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
 }
 
 @media (min-width: 768px) {
@@ -71,7 +87,7 @@ input,textarea {
 
 @media (min-width: 200px) and (max-width: 600px) {
     .navbar-custom>.container {
-        width: 90%;
+        width: 100%;
     }
 }
 
@@ -110,6 +126,49 @@ input,textarea {
     padding: 8px;
 }
 
+
+/*****************
+  . SECTORS
+*****************/
+
+.feature > a > .fe-icon {
+    display: flex;
+    /* justify-content: center; */
+    align-items: flex-end;
+}
+
+.feature > a > .fe-icon {
+    transform: translateX(14%);
+}
+
+
+@media (max-width: 768px){
+    .feature > a > .fe-icon {
+        transform: translateX(0);
+    }
+}
+
+/*****************
+  . Blog
+*****************/
+.more-arrow::after {
+    content: "";
+}
+
+.more-arrow::before {
+    /* display: inline-block; */
+    /* font-family: FontAwesome; */
+    content: "\01F894";
+    margin: .4rem;
+    font-size: 2rem;
+    color: #fff;
+}
+.blog-text > a {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 1rem;
+}
 
 /*****************
   . CONTACT US
@@ -162,7 +221,7 @@ input,textarea {
     .img-blog-side {
         /* object-fit: fill;
         width: 100% !important; */
-        height: 19rem;
+        height: 11rem;
         /* float: left; */
         border-radius: 20px 20px 0 0;
     }
@@ -191,13 +250,18 @@ input,textarea {
         right: 0;
         bottom: 0;
         /* width: 100%; */
-        height: 19rem;
+        height: 11rem;
         border-radius: 20px 20px 0 0;
         /* box-shadow: inset 0 -100px 200px rgba(0, 0, 0, 0.7); */
     }
     
 }
 
+.contact-info > .contact-row > span {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
 
 /*================================== ORDER PAGE ===============================*/
 

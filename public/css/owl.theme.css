@@ -10,6 +10,14 @@
 
 /* Styling Next and Prev buttons */
 
+
+
+.owl-theme .owl-controls .owl-buttons{
+	display: flex;
+	justify-content: space-between;
+	transform: translateY(-30vh);
+}
+
 .owl-theme .owl-controls .owl-buttons div{
 	color: #FFF;
 	display: inline-block;
@@ -51,6 +59,10 @@
 	-moz-border-radius: 20px;
 	border-radius: 20px;
 	background: #009F61;
+	transition: .2s all;
+}
+.owl-theme .owl-controls .owl-page.active span{
+	transform: scale(1.6);
 }
 
 .owl-theme .owl-controls .owl-page.active span,

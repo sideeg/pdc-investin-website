@@ -1,14 +1,18 @@
-/* Theme Name: Alita - A Responsive Multipurpose HTML Template
-   Author: Shreethemes
-   Version: 1.0.0
-   Created: March 2019
-   File Description: Main Navbar file of the template
-*/
+@font-face {
+    font-family: 'Moon';
+    font-style: normal;
+    /* font-weight: 400; */
+    src: url('../fonts/Moon/Moon-Bold.otf'); /* IE9 Compat Modes */
+    src: local('Moon'), local('Moon-blod'),
+         url('../fonts/Moon/Moon-Light.otf') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Moon/Moon-Bold.otf') format('embedded-opentype'), /* IE6-IE8 */
 
+}
 /* ============
     Navbar
 ===============*/
 .navbar-custom {
+    font-family: 'Moon' ,sans-serif;
     padding: 10px 0px;
     width: 100%;
     border-radius: 0px;

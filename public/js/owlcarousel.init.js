@@ -62,17 +62,34 @@
 
     $("#owl-success-stories").owlCarousel({
         center: true,
-        autoPlay: 3000,
-        // items: 2,
-        margin: 10,
-        loop:true,
-        stopOnHover: true,
-        navigation: false,
-        paginationSpeed: 1000,
-        goToFirstSpeed: 2000,
-        singleItem: true,
-        // autoHeight: true,
-        // autoWidth: true,
-        itemsDesktop: [1199, 2],
-        itemsDesktopSmall: [979, 2]
+        // autoPlay: 3000,
+        items: 2,
+        // margin: 10,
+        // loop:true,
+        // stopOnHover: true,
+        // navigation: true,
+        nav: true,
+        navText: [
+            '<div>&#129120;</div>',
+            '<div>&#129122;</div>'
+        ],
+        // paginationSpeed: 1000,
+        // goToFirstSpeed: 2000,
+        // singleItem: true,
+        autoHeight: true,
+        autoWidth: true,
+        responsive:{
+            0:{
+                items:1
+            },
+            768:{
+                items:2
+            },
+            1000:{
+                items:2
+            }
+        }
+        // itemsDesktop: [1199, 2],
+        // itemsDesktopSmall: [979, 2]
+        
     });

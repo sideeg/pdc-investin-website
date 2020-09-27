@@ -6,9 +6,9 @@
 <!-- BLOG -->
 <section class="section bg-grey">
     <div class="container">
-        <div class="row">
+        <div class="row my-5">
             <div class="col-md-12">
-                <div class="title-heading">
+                <div class="title-heading my-5">
                     <h2 class="color-green text-center dot">{{ __('content.blog')}}</h2>
                     <div class="row justify-content-center">
                     <p class="mx-auto my-3 col-lg-6 col-md-6 col-sm-12 text-center">
@@ -33,13 +33,13 @@
                                             
                                         </div>
                                         <div class="blog-text col-lg-6">
-                                            <h4 class="my-3 text-black word-keep">
+                                            <h4 class="m-3 text-black word-keep">
                                                 {{ $item->blog_name_en}}
                                             </h4>
-                                            <p class="">
+                                            <p class="m-3">
                                                 {{ $item->Brief_en}}
                                             </p>
-                                            <a href="{{route('article', $item->id)}}" class="btn-blog">{{ __('content.readFull')}}</a>
+                                            <a href="{{route('article', $item->id)}}" class="btn-blog m-3">{{ __('content.readFull')}}</a>
                                         </div>
                                         <div class="col-lg-2">
                                             <h5 class="my-3 text-green2 text-center blog-date"> <span class="d-block day">{{\Carbon\Carbon::parse($item->created_at)->format('H') }}</span> <span  class="d-block month">Novmber</span> <span class="d-block year">2020</span></h5>
